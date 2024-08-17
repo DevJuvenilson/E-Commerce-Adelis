@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -16,12 +16,12 @@
             background: url(https://i.pinimg.com/564x/0c/61/1a/0c611ab0e09772ae18b78f26e77a708b.jpg);
             background-size: 100%;
             background-position: center;
-            padding-top: 23vh;
+            padding-top: 15vh;
         }
 
         header {
             width: 100%;
-            height: 23vh;
+            height: 15vh;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -33,22 +33,49 @@
         }
 
         .carousel-inner {
+            width: 100%;
             height: 525px;
         }
-
     </style>
 </head>
 
 <body>
-    <header class="fixed-header">
-        <h1>Meu Site</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#services">Serviços</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img class="d-inline-block align-text-top" src="https://i.pinimg.com/564x/0c/61/1a/0c611ab0e09772ae18b78f26e77a708b.jpg" alt="" width="60" height="60">
+
+                    <span class="ms-2">ADELIS</span>
+                </a>
+
+                <!-- Botão de colapso para telas menores -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Links da navbar -->
+                <div class="collapse navbar-collapse" id="navbarLinks">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobre">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#secoes">Seções</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#marcas">Marcas</a>
+                        </li>
+                        <!-- Botão de login -->
+                        <li class="nav-item botao">
+                            <a class="btn btn-primary ms-lg-3" href="#">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
     <main>
@@ -91,6 +118,7 @@
     </main>
 
     <script src="../bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
