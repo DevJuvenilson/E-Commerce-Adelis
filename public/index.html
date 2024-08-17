@@ -36,6 +36,88 @@
             width: 100%;
             height: 525px;
         }
+
+        .container-fluid {
+            padding: 1em 2em 1em 2em;
+        }
+
+        .container-fluid>a>span {
+            font-size: 20px;
+            padding-left: 0.3em;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .container-fluid>div>ul>li {
+            font-size: 20px;
+            padding-right: 1em;
+        }
+
+        .container-fluid>div>ul>li>a {
+            color: #162C49;
+            border-radius: 5px;
+            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.5s ease, ;
+        }
+
+        .container-fluid>div>ul>li>a:hover {
+            transition: 0.4s;
+            background-color: #F2F4F6;
+            box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.78);
+            -webkit-box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.78);
+            -moz-box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.78);
+        }
+
+        .container-fluid>div>ul>li>button {
+            font-size: 20px;
+            top: 15px;
+        }
+
+        .modal-header>h5 {
+            color: #F2F4F6;
+        }
+
+        .modal-header > button {
+            border: none;
+            background: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .modal-header > button > svg {
+            padding: 0;
+            margin: 0;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .modal-body {
+            text-align: center;
+            height: 65vh;
+        }
+
+        .modal-body > div > hr {
+            color: #F2F4F6;
+        }
+
+        .modal-body > div > a {
+            margin-top: 10px;
+            color: #F2F4F6;
+        }
+
+        .modal-body > div > p {
+            color: #F2F4F6;
+        }
+
+        .modal-body > div > p > a {
+            color: #F2F4F6;
+        }
     </style>
 </head>
 
@@ -43,22 +125,24 @@
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
+                <!-- Logo e Nome do Site -->
                 <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img class="d-inline-block align-text-top" src="https://i.pinimg.com/564x/0c/61/1a/0c611ab0e09772ae18b78f26e77a708b.jpg" alt="" width="60" height="60">
-
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg"
+                        width="50" />
                     <span class="ms-2">ADELIS</span>
                 </a>
 
                 <!-- Botão de colapso para telas menores -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <!-- Links da navbar -->
-                <div class="collapse navbar-collapse" id="navbarLinks">
+                <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link" href="#">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#sobre">Sobre</a>
@@ -70,14 +154,53 @@
                             <a class="nav-link" href="#marcas">Marcas</a>
                         </li>
                         <!-- Botão de login -->
-                        <li class="nav-item botao">
-                            <a class="btn btn-primary ms-lg-3" href="#">Login</a>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#JanelaModal">Login</button>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
+    <!-- MODAL -->
+    <div id="JanelaModal" class="modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-5">Faça seu Login</h5>
+                    <button type="button" data-bs-dismiss="modal"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#F2F4F6"><path d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z" type="button" data-bs-dismiss="modal"/></svg></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <img class="mb-5" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" width="100" />
+    
+                        <form id="loginForm">
+                            <div class="mb-4">
+                                <input type="email" class="form-control" id="email" placeholder="email@exemplo.com" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="password" class="form-control" id="password" placeholder="Senha" required>
+                            </div>
+                        </form>
+    
+                        <button type="submit" form="loginForm" class="btn btn-primary col-12 mb-4" onclick="">
+                            Entrar
+                        </button>
+    
+                        <a href="index.html" class="mb-1">Esqueceu sua senha?</a>
+                        
+                        <hr>
+
+                        <p>Não tem uma conta? <a href="index.html">Crie uma aqui</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main>
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
             <div class="carousel-indicators">
