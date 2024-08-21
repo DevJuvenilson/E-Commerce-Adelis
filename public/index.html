@@ -16,12 +16,11 @@
             background: url(https://i.pinimg.com/564x/0c/61/1a/0c611ab0e09772ae18b78f26e77a708b.jpg);
             background-size: 100%;
             background-position: center;
-            padding-top: 15vh;
+            padding-top: 14.8vh;
         }
 
         header {
             width: 100%;
-            height: 15vh;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -38,21 +37,21 @@
         }
 
         .container-fluid {
-            padding: 1em 2em 1em 2em;
+            padding: 1em 2em;
         }
 
-        .container-fluid>a>span {
-            font-size: 20px;
+        .navbar-brand span {
+            font-size: 19px;
             padding-left: 0.3em;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
-        .container-fluid>div>ul>li {
-            font-size: 20px;
+        .navbar-nav .nav-item {
+            font-size: 19px;
             padding-right: 1em;
         }
 
-        .container-fluid>div>ul>li>a {
+        .navbar-nav .nav-link {
             color: #162C49;
             border-radius: 5px;
             box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
@@ -61,7 +60,7 @@
             transition: box-shadow 0.5s ease, ;
         }
 
-        .container-fluid>div>ul>li>a:hover {
+        .navbar-nav .nav-link:hover {
             transition: 0.4s;
             background-color: #F2F4F6;
             box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.78);
@@ -69,8 +68,12 @@
             -moz-box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.78);
         }
 
+        .navbar-toggler {
+            border: none;
+        }
+
         .container-fluid>div>ul>li>button {
-            font-size: 20px;
+            font-size: 19px;
             top: 15px;
         }
 
@@ -127,7 +130,7 @@
             <div class="container-fluid">
                 <!-- Logo e Nome do Site -->
                 <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg"
+                    <img src="../Prancheta 1.png"
                         width="50" />
                     <span class="ms-2">ADELIS</span>
                 </a>
@@ -175,7 +178,7 @@
 
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <img class="mb-5" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" width="100" />
+                        <img class="mb-5" src="../Prancheta 1.png" width="100" />
     
                         <form id="loginForm">
                             <div class="mb-4">
@@ -240,7 +243,6 @@
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </main>
 
-    <script src="../bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
     <script src="../bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
