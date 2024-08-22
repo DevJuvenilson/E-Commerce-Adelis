@@ -51,6 +51,12 @@
             padding-right: 1em;
         }
 
+        @media (max-width: 990px) {
+            .navbar-nav .nav-item {
+                margin-bottom: 0.5em;
+            }
+        }
+
         .navbar-nav .nav-link {
             color: #162C49;
             border-radius: 5px;
@@ -81,14 +87,14 @@
             color: #F2F4F6;
         }
 
-        .modal-header > button {
+        .modal-header>button {
             border: none;
             background: none;
             padding: 0;
             margin: 0;
         }
 
-        .modal-header > button > svg {
+        .modal-header>button>svg {
             padding: 0;
             margin: 0;
         }
@@ -105,20 +111,20 @@
             height: 65vh;
         }
 
-        .modal-body > div > hr {
+        .modal-body>div>hr {
             color: #F2F4F6;
         }
 
-        .modal-body > div > a {
+        .modal-body>div>a {
             margin-top: 10px;
             color: #F2F4F6;
         }
 
-        .modal-body > div > p {
+        .modal-body>div>p {
             color: #F2F4F6;
         }
 
-        .modal-body > div > p > a {
+        .modal-body>div>p>a {
             color: #F2F4F6;
         }
     </style>
@@ -130,8 +136,7 @@
             <div class="container-fluid">
                 <!-- Logo e Nome do Site -->
                 <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img src="../Prancheta 1.png"
-                        width="50" />
+                    <img src="../Prancheta 1.png" width="50" />
                     <span class="ms-2">ADELIS</span>
                 </a>
 
@@ -173,28 +178,34 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title fs-5">Faça seu Login</h5>
-                    <button type="button" data-bs-dismiss="modal"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#F2F4F6"><path d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z" type="button" data-bs-dismiss="modal"/></svg></button>
+                    <button type="button" data-bs-dismiss="modal"><svg xmlns="http://www.w3.org/2000/svg" height="40px"
+                            viewBox="0 -960 960 960" width="40px" fill="#F2F4F6">
+                            <path
+                                d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z"
+                                type="button" data-bs-dismiss="modal" />
+                        </svg></button>
                 </div>
 
                 <div class="modal-body">
                     <div class="container-fluid">
                         <img class="mb-5" src="../Prancheta 1.png" width="100" />
-    
+
                         <form id="loginForm">
                             <div class="mb-4">
-                                <input type="email" class="form-control" id="email" placeholder="email@exemplo.com" required>
+                                <input type="email" class="form-control" id="email" placeholder="email@exemplo.com"
+                                    required>
                             </div>
                             <div class="mb-4">
                                 <input type="password" class="form-control" id="password" placeholder="Senha" required>
                             </div>
                         </form>
-    
+
                         <button type="submit" form="loginForm" class="btn btn-primary col-12 mb-4" onclick="">
                             Entrar
                         </button>
-    
+
                         <a href="index.html" class="mb-1">Esqueceu sua senha?</a>
-                        
+
                         <hr>
 
                         <p>Não tem uma conta? <a href="index.html">Crie uma aqui</a></p>
