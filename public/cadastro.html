@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="shortcut icon" href="assets/icons/logo-adelis-ico.ico" type="image/x-icon">
+
+    <style>
+        input {
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-bottom-width: 1px;
+            outline: none;
+        }
+
+        .no-icon::-webkit-calendar-picker-indicator {
+            pointer-events: none;
+            display: none;
+        }
+
+        .no-icon {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" placeholder="Primerio Nome" required>
+        <input type="text" placeholder="Sobrenome" required>
+        <input type="text" placeholder="Data de Nascimento" class="no-icon" max="10" onfocus="this.type='date'"
+            onblur="this.type='text'" required>
+        <input type="text" placeholder="CPF" required>
+        <input type="email" placeholder="E-mail" required>
+        <input type="password" placeholder="Senha" id="senha" required>
+        <div class="confirmar_senha">
+            <input type="password" placeholder="Confirmar Senha" id="confirmar-senha" required>
+            <p id="mensagem"></p>
+        </div>
+    </div>
+
+    <script>
+        const senhaInput = document.getElementById('senha');
+        const confirmarsenhaInput = document.getElementById('confirmar-senha');
+        const mensagem = document.getElementById('mensagem');
+    
+        function validatePassword() {
+            if (senhaInput.value === confirmarsenhaInput.value && senhaInput.value !== '') {
+                mensagem.textContent = 'Correto!';
+                mensagem.style.color = 'green';
+            } else if (senhaInput.value !== '' && confirmarsenhaInput.value !== '') {
+                mensagem.textContent = 'Incorreto!';
+                mensagem.style.color = 'red';
+            } else {
+                mensagem.textContent = ''; // Limpa a mensagem se algum campo estiver vazio
+            }
+        }
+    
+        senhaInput.addEventListener('input', validatePassword);
+        confirmarsenhaInput.addEventListener('input', validatePassword);
+    </script>
+    
+</body>
+
+</html>
