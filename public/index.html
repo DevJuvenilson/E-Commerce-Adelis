@@ -15,7 +15,7 @@
 
     <style>
         body {
-            background: url(https://i.pinimg.com/564x/0c/61/1a/0c611ab0e09772ae18b78f26e77a708b.jpg);
+            background: white;
             background-size: 100%;
             background-position: center;
             padding-top: 14.8vh;
@@ -24,9 +24,7 @@
         header {
             width: 100%;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(5px);
             position: fixed;
             top: 0;
             left: 0;
@@ -129,6 +127,57 @@
         .modal-body>div>p>a {
             color: #F2F4F6;
         }
+
+        .sobre {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            
+        }
+
+        .conteudo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            flex-wrap: wrap;
+        }
+
+        .conteudo-esquerda,
+        .conteudo-direita,
+        .conteudo-meio {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .conteudo-meio {
+            text-align: center;
+        }
+
+        .conteudo-meio img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Estilos para dispositivos menores */
+        @media (max-width: 768px) {
+            .conteudo {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .conteudo-esquerda,
+            .conteudo-direita {
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .conteudo-meio {
+                padding: 20px 0;
+            }
+        }
     </style>
 </head>
 
@@ -185,8 +234,7 @@
                             fill="#F2F4F6">
                             <path
                                 d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z"
-                                type="button" data-bs-dismiss="modal" 
-                            />
+                                type="button" data-bs-dismiss="modal" />
                         </svg>
                     </button>
                 </div>
@@ -221,6 +269,8 @@
     </div>
 
     <main>
+
+        <!-- CARROSSEL -->
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -233,15 +283,15 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="https://4kwallpapers.com/images/wallpapers/ipad-air-2022-stock-dark-background-dark-mode-2732x2732-7907.png"
-                        class="d-block" alt="...">
+                        class="d-block" alt="Banner Promocional 1">
                 </div>
                 <div class="carousel-item">
                     <img src="https://4kwallpapers.com/images/wallpapers/ipad-air-2022-stock-dark-background-dark-mode-2732x2732-7907.pn"
-                        class="d-block" alt="...">
+                        class="d-block" alt="Banner Promocional 2">
                 </div>
                 <div class="carousel-item">
                     <img src="https://4kwallpapers.com/images/wallpapers/ipad-air-2022-stock-dark-background-dark-mode-2732x2732-7907.pn"
-                        class="d-block" alt="...">
+                        class="d-block" alt="Banner Promocional 3">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -256,8 +306,35 @@
             </button>
         </div>
 
+        <div class="sobre" id="sobre">
+            <div class="conteudo">
+                <div class="conteudo-esquerda">
+                    <h4>TITULO</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi eius ducimus, eligendi dicta
+                        inventore quidem excepturi recusandae quis, enim, sequi harum perspiciatis iste animi quam ab
+                        porro quos aperiam! Magnam.</p>
+                </div>
+
+                <div class="conteudo-meio">
+                    <img src="assets/images/banners-intitucionais/banner-institucionais-novidade.png"
+                        alt="Banner Institucional Sobre Nós" width="600px">
+                </div>
+
+                <div class="conteudo-direita">
+                    <h4>TITULO</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi eius ducimus, eligendi dicta
+                        inventore quidem excepturi recusandae quis, enim, sequi harum perspiciatis iste animi quam ab
+                        porro quos aperiam! Magnam.</p>
+                </div>
+            </div>
+        </div>
+
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </main>
+
+    <footer>
+
+    </footer>
 
     <script src="../bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
 </body>
