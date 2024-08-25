@@ -21,6 +21,12 @@
             padding-top: 14.8vh;
         }
 
+        @media (max-width: 1024px) {
+            body{
+                padding-top: 17vh;
+            }
+        }
+
         header {
             width: 100%;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
@@ -33,8 +39,153 @@
 
         .carousel-inner {
             width: 100%;
-            height: 525px;
+            height: auto;
+            /* Remove a altura fixa para permitir ajuste automático */
         }
+
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            /* Mantém a proporção da imagem */
+            object-fit: cover;
+            /* Cobre o container sem distorcer a imagem */
+        }
+
+        /* Estilos para desktops */
+        @media (min-width: 992px) {
+            .first {
+                background-image: url(assets/images/banners-promocionais/1/Banner-promocional\(1\)-grande.png);
+                background-size: cover;
+                background-position: center;
+                height: 525px;
+                /* Altura desejada */
+            }
+
+            .first img {
+                display: none;
+                /* Oculta a tag img para evitar conflitos */
+            }
+
+            .second {
+                background-image: url(assets/images/banners-promocionais/2/Banner-promocional\(2\)-grande.png);
+                background-size: cover;
+                background-position: center;
+                height: 525px;
+                /* Altura desejada */
+            }
+
+            .second img {
+                display: none;
+                /* Oculta a tag img para evitar conflitos */
+            }
+
+            .third {
+                background-image: url(assets/images/banners-promocionais/3/Banner-promocional\(3\)-grande.png);
+                background-size: cover;
+                background-position: center;
+                height: 525px;
+                /* Altura desejada */
+            }
+
+            .third img {
+                display: none;
+                /* Oculta a tag img para evitar conflitos */
+            }
+        }
+
+        /* Estilos para tablets */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .first {
+                background-image: url(assets/images/banners-promocionais/1/Banner-promocional\(1\)-medio.png);
+                background-size: cover;
+                background-position: center;
+                min-height: 400px;
+                height: auto;
+                /* Altura desejada */
+            }
+
+            .first img {
+                display: none;
+                /* Oculta a tag img para evitar conflitos */
+            }
+
+            .second {
+                background-image: url(assets/images/banners-promocionais/2/Banner-promocional\(2\)-medio.png);
+                background-size: cover;
+                background-position: center;
+                min-height: 400px;
+                height: auto;
+                /* Altura desejada */
+            }
+
+            .second img {
+                display: none;
+                /* Oculta a tag img para evitar conflitos */
+            }
+
+            .third {
+                background-image: url(assets/images/banners-promocionais/3/Banner-promocional\(3\)-medio.png);
+                background-size: cover;
+                background-position: center;
+                min-height: 400px;
+                height: auto;
+                /* Altura desejada */
+            }
+
+            .third img {
+                display: none;
+                /* Oculta a tag img para evitar conflitos */
+            }
+        }
+
+        /* Estilos para celulares */
+        @media (max-width: 767px) {
+            .first {
+                background-image: url(assets/images/banners-promocionais/1/Banner-promocional\(1\)-pequeno.png);
+                background-size: cover;
+                background-position: center;
+                min-height: 300px;
+                height: auto;
+                /* Altura desejada */
+            }
+
+            .first img {
+                display: none;
+                width: auto;
+                /* Oculta a tag img para evitar conflitos */
+            }
+
+            .second {
+                background-image: url(assets/images/banners-promocionais/2/Banner-promocional\(2\)-pequeno.png);
+                background-size: cover;
+                background-position: center;
+                min-height: 300px;
+                height: auto;
+                /* Altura desejada */
+            }
+
+            .second img {
+                display: none;
+                width: auto;
+                /* Oculta a tag img para evitar conflitos */
+            }
+
+            .third {
+                background-image: url(assets/images/banners-promocionais/3/Banner-promocional\(3\)-pequeno.png);
+                background-size: cover;
+                background-position: center;
+                min-height: 300px;
+                height: auto;
+                /* Altura desejada */
+            }
+
+            .third img {
+                display: none;
+                width:min-content;
+                /* Oculta a tag img para evitar conflitos */
+            }
+        }
+
 
         .container-fluid {
             padding: 1em 2em;
@@ -108,7 +259,7 @@
 
         .modal-body {
             text-align: center;
-            height: 65vh;
+            height: auto;
         }
 
         .modal-body>div>hr {
@@ -133,7 +284,7 @@
             justify-content: center;
             align-items: center;
             padding: 40px;
-            
+
         }
 
         .conteudo {
@@ -281,17 +432,11 @@
                     aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://4kwallpapers.com/images/wallpapers/ipad-air-2022-stock-dark-background-dark-mode-2732x2732-7907.png"
-                        class="d-block" alt="Banner Promocional 1">
+                <div class="carousel-item first active">
                 </div>
-                <div class="carousel-item">
-                    <img src="https://4kwallpapers.com/images/wallpapers/ipad-air-2022-stock-dark-background-dark-mode-2732x2732-7907.pn"
-                        class="d-block" alt="Banner Promocional 2">
+                <div class="carousel-item second">
                 </div>
-                <div class="carousel-item">
-                    <img src="https://4kwallpapers.com/images/wallpapers/ipad-air-2022-stock-dark-background-dark-mode-2732x2732-7907.pn"
-                        class="d-block" alt="Banner Promocional 3">
+                <div class="carousel-item third">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
