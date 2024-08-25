@@ -22,7 +22,7 @@
         }
 
         @media (max-width: 1024px) {
-            body{
+            body {
                 padding-top: 17vh;
             }
         }
@@ -181,7 +181,7 @@
 
             .third img {
                 display: none;
-                width:min-content;
+                width: min-content;
                 /* Oculta a tag img para evitar conflitos */
             }
         }
@@ -283,11 +283,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px;
-
+            padding: 10vh 5vh;
         }
 
-        .conteudo {
+        .sobre-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -296,38 +295,306 @@
             flex-wrap: wrap;
         }
 
-        .conteudo-esquerda,
-        .conteudo-direita,
-        .conteudo-meio {
+        .texto-sobre-esquerda,
+        .texto-sobre-direita,
+        .imagem-sobre {
             flex: 1;
             padding: 20px;
         }
 
-        .conteudo-meio {
+        .texto-sobre-direita>h2,
+        .texto-sobre-esquerda>h2 {
+            text-align: center;
+            padding-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .texto-sobre-direita>p,
+        .texto-sobre-esquerda>p {
+            text-align: justify;
+            font-size: 1.3em;
+            font-weight: 500;
+        }
+
+        .imagem-sobre {
             text-align: center;
         }
 
-        .conteudo-meio img {
+        .imagem-sobre img {
             max-width: 100%;
             height: auto;
         }
 
         /* Estilos para dispositivos menores */
         @media (max-width: 768px) {
-            .conteudo {
+            .sobre-container {
                 flex-direction: column;
                 align-items: center;
             }
 
-            .conteudo-esquerda,
-            .conteudo-direita {
+            .texto-sobre-esquerda,
+            .texto-sobre-direita {
                 text-align: center;
                 padding: 10px 0;
             }
 
-            .conteudo-meio {
+            .imagem-sobre {
                 padding: 20px 0;
             }
+        }
+
+        .novidade {
+            display: flex;
+            justify-content: center;
+            /* Alinha todo o conteúdo da div .novidade ao centro da página */
+            align-items: center;
+            /* Centraliza verticalmente o conteúdo dentro da .novidade */
+            margin: 20px auto;
+            /* Define uma margem automática nas laterais para garantir que a div esteja centralizada horizontalmente */
+            max-width: 80%;
+            /* Limita a largura total da div para que ela não ocupe 100% da largura da página */
+            padding: 10vh 5vh;
+        }
+
+        .imagem-novidade {
+            flex: 1;
+            /* A imagem ocupa 50% do espaço disponível */
+            text-align: center;
+            /* Centraliza a imagem dentro do seu próprio contêiner */
+        }
+
+        .imagem-novidade>a>img {
+            width: 100%;
+        }
+
+        .texto-novidade {
+            flex: 1;
+            /* O texto ocupa 50% do espaço disponível */
+            padding-left: 2em;
+            /* Espaçamento entre a imagem e o texto */
+        }
+
+        .texto-novidade h2 {
+            margin-bottom: 1em;
+            /* Espaçamento entre o título e o parágrafo */
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .texto-novidade p {
+            margin: 0;
+            /* Remove a margem padrão do parágrafo */
+            text-align: justify;
+            font-size: 1.3em;
+            font-weight: 500;
+        }
+
+        /* Estilos para dispositivos menores */
+        @media (max-width: 768px) {
+            .novidade {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .texto-novidade {
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .imagem-novidade {
+                padding: 20px 0;
+            }
+        }
+
+        .sustentabilidade {
+            display: flex;
+            justify-content: center;
+            /* Alinha todo o conteúdo da div .sustentabilidade ao centro da página */
+            align-items: center;
+            /* Centraliza verticalmente o conteúdo dentro da .sustentabilidade */
+            margin: 20px auto;
+            /* Define uma margem automática nas laterais para garantir que a div esteja centralizada horizontalmente */
+            max-width: 80%;
+            /* Limita a largura total da div para que ela não ocupe 100% da largura da página */
+            padding: 10vh 5vh;
+        }
+
+        .imagem-sustentabilidade {
+            flex: 1;
+            /* A imagem ocupa 50% do espaço disponível */
+            text-align: center;
+            /* Centraliza a imagem dentro do seu próprio contêiner */
+        }
+
+        .imagem-sustentabilidade>a>img {
+            width: 100%;
+        }
+
+        .texto-sustentabilidade {
+            flex: 1;
+            /* O texto ocupa 50% do espaço disponível */
+            padding-left: 2em;
+            /* Espaçamento entre a imagem e o texto */
+        }
+
+        .texto-sustentabilidade h2 {
+            margin-bottom: 1em;
+            /* Espaçamento entre o título e o parágrafo */
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .texto-sustentabilidade p {
+            margin: 0;
+            /* Remove a margem padrão do parágrafo */
+            text-align: justify;
+            font-size: 1.3em;
+            font-weight: 500;
+        }
+
+        /* Estilos para dispositivos menores */
+        @media (max-width: 768px) {
+            .sustentabilidade {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .texto-sustentabilidade {
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .imagem-sustentabilidade {
+                padding: 20px 0;
+            }
+        }
+
+        .marcas {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10vh 5vh;
+        }
+
+        .marcas-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            flex-wrap: wrap;
+        }
+
+        .texto-marcas-esquerda,
+        .carrossel-marcas-direita,
+        .imagem-marcas {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .carrossel-marcas-direita>h2,
+        .texto-marcas-esquerda>h2 {
+            text-align: center;
+            padding-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .carrossel-marcas-direita>p,
+        .texto-marcas-esquerda>p {
+            text-align: justify;
+            font-size: 1.3em;
+            font-weight: 500;
+        }
+
+        .imagem-marcas {
+            text-align: center;
+        }
+
+        .imagem-marcas img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Estilos para dispositivos menores */
+        @media (max-width: 768px) {
+            .marcas-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .texto-marcas-esquerda,
+            .texto-marcas-direita {
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .imagem-marcas {
+                padding: 20px 0;
+            }
+        }
+
+        footer {
+            background-color: #0F243F;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .titulo-footer {
+            font-family: 'montserrat';
+            color: #F2F4F6;
+            font-size: 50px;
+            font-weight: 600;
+            padding-top: 1em;
+            margin-bottom: 20px;
+        }
+
+        .footer-list {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            list-style-type: none;
+            text-align: center;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer-item {
+            margin: 0;
+            font-family: 'montserrat';
+            color: #F2F4F6;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            color: #F2F4F6;
+            font-size: 16px;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            /* Espaçamento entre os ícones */
+            margin-bottom: 20px;
+        }
+
+        .footer-social > a > img {
+            display: block;
+            margin: 0 auto;
+        }
+
+
+        .footer-essencial {
+            font-family: 'inter';
+            color: #F2F4F6;
+            margin-top: 20px;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -451,22 +718,25 @@
             </button>
         </div>
 
+        <!-- SEÇÃO SOBRE A LOJA E SUA MISSÃO -->
         <div class="sobre" id="sobre">
-            <div class="conteudo">
-                <div class="conteudo-esquerda">
-                    <h4>TITULO</h4>
+            <div class="sobre-container">
+                <div class="texto-sobre-esquerda">
+                    <h2>TITULO</h2>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi eius ducimus, eligendi dicta
                         inventore quidem excepturi recusandae quis, enim, sequi harum perspiciatis iste animi quam ab
                         porro quos aperiam! Magnam.</p>
                 </div>
 
-                <div class="conteudo-meio">
-                    <img src="assets/images/banners-intitucionais/banner-institucionais-novidade.png"
-                        alt="Banner Institucional Sobre Nós" width="600px">
+                <div class="imagem-sobre">
+                    <a href="#">
+                        <img src="assets/images/banners-intitucionais/banner-institucionais-novidade.png"
+                            alt="Banner Institucional Sobre Nós" width="600px" title="Saiba Mais">
+                    </a>
                 </div>
 
-                <div class="conteudo-direita">
-                    <h4>TITULO</h4>
+                <div class="texto-sobre-direita">
+                    <h2>TITULO</h2>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi eius ducimus, eligendi dicta
                         inventore quidem excepturi recusandae quis, enim, sequi harum perspiciatis iste animi quam ab
                         porro quos aperiam! Magnam.</p>
@@ -474,11 +744,153 @@
             </div>
         </div>
 
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <!-- BANNER DA SEÇÃO FEMININO -->
+        <div class="banner-secao-feminino" id="secoes">
+            <a href="#">
+                <img src="assets/images/banners-secoes/banner-secao-feminino.png" alt="Banner Seção Feminino"
+                    width="100%" title="Seção Feminino">
+            </a>
+        </div>
+
+        <!-- SEÇÃO SOBRE NOVIDADE -->
+        <div class="novidade">
+            <div class="imagem-novidade">
+                <a href="#"><img src="assets/images/banners-intitucionais/banner-institucionais-novidade.png"
+                        alt="Banner De Novidade"></a>
+            </div>
+            <div class="texto-novidade">
+                <h2>TITULO</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit dolorum dolorem exercitationem autem
+                    porro nesciunt eligendi corrupti quo odit, eos maxime aspernatur, laborum labore repellendus ex
+                    enim? Dignissimos, doloremque. Ad?</p>
+            </div>
+        </div>
+
+        <!-- BANNER DA SEÇÃO MASCULINO -->
+        <div class="banner-secao-masculino">
+            <a href="#">
+                <img src="assets/images/banners-secoes/banner-secao-masculino.png" alt="Banner Seção Masculino"
+                    width="100%" title="Seção Masculino">
+            </a>
+        </div>
+
+        <!-- SEÇÃO SOBRE SUSTENTABILIDADE -->
+        <div class="sustentabilidade" id="sustentabilidade">
+            <div class="imagem-sustentabilidade">
+                <a href="#"><img src="assets/images/banners-intitucionais/banner-sustentabilidade.png"
+                        alt="Banner De Sustentabilidade"></a>
+            </div>
+            <div class="texto-sustentabilidade">
+                <h2>TITULO</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit dolorum dolorem exercitationem autem
+                    porro nesciunt eligendi corrupti quo odit, eos maxime aspernatur, laborum labore repellendus ex
+                    enim? Dignissimos, doloremque. Ad?</p>
+            </div>
+        </div>
+
+        <!-- BANNER DA SEÇÃO INFANTIL -->
+        <div class="banner-secao-infantil">
+            <a href="#">
+                <img src="assets/images/banners-secoes/banner-secao-infantil.png" alt="Banner Seção infantil"
+                    width="100%" title="Seção infantil">
+            </a>
+        </div>
+
+        <!-- SEÇÃO SOBRE PARCERIA -->
+        <div class="marcas" id="marcas">
+            <div class="marcas-container">
+                <div class="texto-marcas-esquerda">
+                    <h2>TITULO</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi eius ducimus, eligendi dicta
+                        inventore quidem excepturi recusandae quis, enim, sequi harum perspiciatis iste animi quam ab
+                        porro quos aperiam! Magnam.</p>
+                </div>
+
+                <div class="imagem-marcas">
+                    <a href="#">
+                        <img src="assets/images/banners-intitucionais/banner-parceria.png"
+                            alt="Banner Institucional marcas Nós" width="600px" title="Saiba Mais">
+                    </a>
+                </div>
+
+                <div class="carrossel-marcas-direita">
+                    <!-- CARROSSEL -->
+                    <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="true">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/images/carrossel-marcas/logo-miumiu.png" alt="">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/carrossel-marcas/logo-rchlo.png" alt="">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/carrossel-marcas/logo-zara.png" alt="">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
+        <h2 class="titulo-footer">ADELIS</h2>
 
+        <div class="footer-list">
+            <ul class="footer">
+                <li class="footer-item">
+                    <a class="footer-link" href="#">Home</a>
+                </li>
+                <li class="footer-item">
+                    <a class="footer-link" href="#sobre">Sobre</a>
+                </li>
+                <li class="footer-item">
+                    <a class="footer-link" href="#secoes">Seções</a>
+                </li>
+                <li class="footer-item">
+                    <a class="footer-link" href="#marcas">Marcas</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer-social">
+            <div class="instagram">
+                <a href="https://www.instagram.com/adelis.loja/">
+                    <img src="assets/images/icones/icons8-instagram-512.png" alt="Instagram" width="50px">
+                </a>
+            </div>
+            <div class="email">
+                <a href="https://www.google.com/intl/pt-BR/gmail/about/">
+                    <img src="assets/images/icones/icons8-nova-mensagem-100.png" alt="Email" width="45px">
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-essencial">
+            <small>
+                &copy; 2024 ADELIS. Todos os direitos reservados.
+                <br>
+                Desenvolvido com carinho pela equipe ADELIS.
+            </small>
+        </div>
     </footer>
 
     <script src="../bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
