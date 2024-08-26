@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Multi-Etapas em Modal</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        p {
+            font-size: small;
+            margin: 0;
+            padding-bottom: 10px;
+        }
+
+        .input_min {
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            padding-top: 30px;
+            padding-bottom: 2px;
+            width: 205px;
+        }
+
+        .modal {
+            display: none;
+            /* Escondido por padrão */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px;
+            border: none;
+            background-color: #000000;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .linha {
+            background-color: black;
+            width: 100%;
+            height: 1px;
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+        }
+
+        .cep_input {
+            padding: 7px;
+            border-radius: 0;
+            border: 1px solid #ccc;
+        }
+
+        .CEP {
+            margin: 0;
+            padding-top: 30px;
+        }
+
+        a {
+            padding-left: 3px;
+            font-style: italic;
+            font-weight: bold;
+            color: black;
+        }
+
+        .cidade_estado {
+            width: 97px;
+            float: left;
+        }
+
+        .espaçamento {
+            margin-bottom: 15px;
+        }
+
+        .espaçamento-half {
+            padding-right: 10px;
+            float: left;
+            margin-bottom: 15px;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .open-modal-btn {
+            padding: 10px 20px;
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .open-modal-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .proximo-voltar {
+            float: right;
+        }
+
+        @media (max-width: 768px) {
+            .cidade_estado {
+                width: 100%;
+                float: none;
+                margin-bottom: 10px;
+            }
+
+            .espaçamento-half {
+                width: 100%;
+                float: none;
+            }
+
+            a {
+                display: block;
+                padding-top: 5px;
+            }
+
+            .input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Botão para abrir o modal -->
+    <button class="open-modal-btn" onclick="openModal()">Abrir Formulário</button>
+
+    <!-- Estrutura do Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <form id="multiStepForm">
+                <legend>Preencha seus Dados</legend>
+
+                <!--DIV DA PAGINA DE ENDEREÇO-->
+                <div class="step">
+                    <div class="CEP">
+                        <label for="cep">Insira seu CEP:</label>
+                        <input type="text" id="cep" placeholder="CEP" class="cep_input">
+                        <button type="button" onclick="buscarEndereco()">Aplicar</button>
+                        <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank">Não sei
+                            meu
+                            CEP</a>
+                        <p id="localizacao"></p>
+                    </div>
+
+                    <div class="linha"></div>
+
+                    <div class="input_step1">
+                        <div class="espaçamento-half">
+                            <input type="text" placeholder="Nome" class="input_min">
+                        </div>
+                        <div class="espaçamento-half">
+                            <input type="text" placeholder="Telefone" class="input_min">
+                        </div>
+                        <div class="espaçamento-half">
+                            <input type="text" placeholder="Endereço" class="input_min">
+                        </div>
+                        <div class="espaçamento-half">
+                            <input type="text" placeholder="Número" class="input_min">
+                        </div>
+                        <div class="espaçamento-half">
+                            <input type="text" placeholder="Bairro" class="input_min">
+                        </div>
+                        <div class="espaçamento-half cidade_estado">
+                            <input type="text" placeholder="Cidade" class="input_min cidade_estado">
+                        </div>
+                        <div class="espaçamento-half cidade_estado">
+                            <input type="text" placeholder="Estado" class="input_min cidade_estado">
+                        </div>
+                    </div>
+
+                    <div class="clear"></div>
+
+                    <button type="button" onclick="nextStep()" class="proximo-voltar">Próximo</button>
+                </div>
+
+                <!--DIV DA PAGINA DE REGISTRO DE CARTÃO-->
+                <div class="step">
+
+                    <div class="espaçamento-half">
+                        <input type="text" placeholder="Nome" class="input_min">
+                    </div>
+                    <div class="espaçamento-half">
+                        <input type="text" placeholder="Telefone" class="input_min">
+                    </div>
+                    <div class="espaçamento-half">
+                        <input type="text" placeholder="Endereço" class="input_min">
+                    </div>
+                    <div class="espaçamento-half">
+                        <input type="text" placeholder="Número" class="input_min">
+                    </div>
+                    <div class="espaçamento-half">
+                        <input type="text" placeholder="Bairro" class="input_min">
+                    </div>
+                    <div class="espaçamento-half">
+                        <select class="input_min">
+                            <option value="">Parcelas</option>
+                            <option value="2x">2x</option>
+                            <option value="3x">3x</option>
+                            <option value="4x">4x</option>
+                        </select>
+                    </div>
+                    
+
+                    <div class="clear"></div>
+
+                    <button type="button" onclick="prevStep()">Voltar</button>
+                    <button type="button" onclick="nextStep()">Próximo</button>
+                </div>
+
+                <!--DIV DA PAGINA DE CONFIRMAÇÃO DA COMPRA-->
+                <div class="step">
+                    <button type="button" onclick="prevStep()" class="proximo-voltar">Voltar</button>
+                    <button type="submit" class="proximo-voltar">Confirmar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Funções para abrir e fechar o modal
+        function openModal() {
+            document.getElementById("myModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Script para navegação entre as etapas do formulário
+        let currentStep = 0;
+        const steps = document.querySelectorAll('.step');
+
+        function showStep(step) {
+            steps.forEach((stepElement, index) => {
+                stepElement.classList.toggle('active', index === step);
+            });
+        }
+
+        function nextStep() {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+        showStep(currentStep);
+
+        // Script para buscar endereço com o CEP
+        function buscarEndereco() {
+            const cep = document.getElementById('cep').value.replace(/\D/g, '');
+            if (cep) {
+                const url = `https://viacep.com.br/ws/${cep}/json/`;
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.erro) {
+                            alert("CEP não encontrado!");
+                        } else {
+                            document.getElementById('localizacao').innerText = `
+                                ${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}
+                            `;
+                            document.querySelector('input[placeholder="Endereço"]').value = data.logradouro;
+                            document.querySelector('input[placeholder="Bairro"]').value = data.bairro;
+                            document.querySelector('input[placeholder="Cidade"]').value = data.localidade;
+                            document.querySelector('input[placeholder="Estado"]').value = data.uf;
+                        }
+                    })
+                    .catch(error => {
+                        alert("Erro ao buscar o endereço!");
+                        console.error(error);
+                    });
+            } else {
+                alert("Por favor, insira um CEP válido.");
+            }
+        }
+    </script>
+</body>
+
+</html>
