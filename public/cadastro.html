@@ -1,23 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CADASTRO</title>
 
-    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.min.css">
 
     <link rel="shortcut icon" href="assets/icons/logo-adelis-ico.ico" type="image/x-icon">
 
     <style>
+        /* Estilo para a página de cadastro */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            height: 100%;
+        }
+
+        /* Fundo diferente para o container */
+        .background {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url(https://4kwallpapers.com/images/wallpapers/ipad-air-2022-stock-dark-background-dark-mode-2732x2732-7907.png);
+        }
+
+        /* Estilo do container */
+        .container {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 700px;
+            box-sizing: border-box;
+        }
+
+        /* Título do formulário */
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="password"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
         input {
             border-top: none;
             border-right: none;
             border-left: none;
             border-bottom-width: 1px;
             outline: none;
+        }
+
+        /* Botão de cadastro */
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
         }
 
         .no-icon::-webkit-calendar-picker-indicator {
@@ -33,27 +93,38 @@
     </style>
 </head>
 
-<body>
-    <div>
-        <input type="text" placeholder="Primerio Nome" required>
-        <input type="text" placeholder="Sobrenome" required>
-        <input type="text" placeholder="Data de Nascimento" class="no-icon" max="10" onfocus="this.type='date'"
-            onblur="this.type='text'" required>
-        <input type="text" placeholder="CPF" required>
-        <input type="tel" placeholder="Telefone" required>
-        <input type="email" placeholder="E-mail" required>
-        <input type="password" placeholder="Senha" id="senha" required>
-        <div class="confirmar_senha">
-            <input type="password" placeholder="Confirmar Senha" id="confirmar-senha" required>
-            <p id="mensagem"></p>
-        </div>
+<body class="background">
+    <div class="container">
+        
+        <h2>Cadastre-se</h2>
+
+        <form action="">
+            <input type="text" placeholder="Nome" class="campo-nome" required>
+
+            <input type="text" placeholder="Sobrenome" class="campo-sobrenome" required>
+
+            <input type="email" placeholder="E-mail" class="campo-email" required>
+
+            <input type="text" placeholder="Data de Nascimento" class="no-icon" maxlength="10" required>
+
+            <input type="password" placeholder="Senha" class="senha" id="campo-senha" minlength="7" required>
+
+            <div class="confirmar_senha">
+                <input type="password" placeholder="Confirmar Senha" class="campo-confirmar-senha" id="confirmar-senha" required>
+                <p id="mensagem"></p>
+            </div>
+
+            <button type="submit">Cadastrar</button>
+
+            <span><small>Já possui cadastro? <a href="index.html">Entrar</a></small></span>
+        </form>
     </div>
 
     <script>
         const senhaInput = document.getElementById('senha');
         const confirmarsenhaInput = document.getElementById('confirmar-senha');
         const mensagem = document.getElementById('mensagem');
-    
+
         function validatePassword() {
             if (senhaInput.value === confirmarsenhaInput.value && senhaInput.value !== '') {
                 mensagem.textContent = 'Correto!';
@@ -65,11 +136,11 @@
                 mensagem.textContent = '';
             }
         }
-    
+
         senhaInput.addEventListener('input', validatePassword);
         confirmarsenhaInput.addEventListener('input', validatePassword);
     </script>
-    
+
 </body>
 
 </html>
