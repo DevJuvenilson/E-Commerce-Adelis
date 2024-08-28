@@ -176,42 +176,117 @@
         }
 
         .informações {
+            padding: 10px;
             float: right;
             width: 50%;
-            background-color: brown;
         }
 
-        .CUPOM{
+        .CUPOM {
             padding-top: 10px;
             width: 100%;
         }
 
-        .produto{
-            height: taos;
+        .produto {
+            padding: 20px;
             width: 50%;
             display: flex;
-            background-color: #0056b3;
+        }
+
+        .product_container {
+            display: flex;
+        }
+
+        .descricao {
+            padding: 10px;
         }
 
         @media (max-width: 768px) {
-            .cidade_estado {
+
+            .input_min {
                 width: 100%;
-                float: none;
-                margin-bottom: 10px;
+            }
+
+            .modal-content {
+                width: 90%;
+                padding: 20px;
             }
 
             .espaçamento-half {
                 width: 100%;
-                float: none;
+                padding-right: 0;
             }
 
-            a {
-                display: block;
-                padding-top: 5px;
+            .cidade_estado {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .bandeira_cartao {
+                width: 50px;
+                margin-bottom: 10px;
+            }
+
+            .forma_pagamento {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .informações {
+                padding: 0;
+            }
+
+            .produto,
+            .product_container,
+            .descricao {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modal-content {
+                width: 85%;
+                padding: 15px;
+            }
+
+            .espaçamento-half,
+            .cidade_estado,
+            .produto,
+            .descricao {
+                width: 100%;
+                padding-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .forma_pagamento {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .bandeira_cartao {
+                margin-bottom: -20px;
+                width: 100px;
+                padding: 5px;
             }
 
             .input_min {
                 width: 100%;
+            }
+
+            .proximo-voltar,
+            .proximo_voltar {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .produto img {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .informações {
+                width: 100%;
+                padding: 10px 0;
             }
         }
     </style>
@@ -321,8 +396,8 @@
 
                     <div class="clear"></div>
 
-                    <button type="button" onclick="prevStep()">Voltar</button>
-                    <button type="button" onclick="nextStep()">Próximo</button>
+                    <button type="button" onclick="prevStep()" class="proximo_voltar">Voltar</button>
+                    <button type="button" onclick="nextStep()" class="proximo_voltar">Próximo</button>
                 </div>
 
                 <!--DIV DA PAGINA DE CONFIRMAÇÃO DA COMPRA-->
@@ -330,30 +405,33 @@
                     <header></header>
 
                     <main>
-                        <div class="produto">
-                            <img src="assets/images/banners-intitucionais/banner-institucionais-novidade.png" alt="produto" id="imagem_produto" width="100px"> 
-                            <h2 id="product_name">ddddddd</h2>
-                            <p id="product_description">dddddd</p>
-                            <p id="product_price">dddddddd</p>
-                        </div>
+                        <div class="product_container">
+                            <div class="produto">
+                                <img src="" alt="produto" id="imagem_produto" width="50%">
+                                <div class="descricao">
+                                    <h2 id="product_name"></h2>
+                                    <p id="product_description"></p>
+                                    <p id="product_price"></p>
+                                </div>
+                            </div>
 
-                        
-
-                        <div class="informações">
-                            <p>7 dias uteis para a entrega</p>
-                            <p id=""></p>
-                            <p>Compras acima de R$250 o Frete Gratis</p>
-
-                            <div class="linha"></div>
-
-                            <p id="parcela"></p>
-                            <p>Subtotal: </p>
-                            <p>Entrega: </p>
-                            <p>Cartão: </p>
-                            <img src="" alt="bandeira do cartao">
+                            <div class="informações">
+                                <p>7 dias uteis para a entrega</p>
+                                <p id=""></p>
+                                <p style="color: green;">Compras acima de R$250 Frete Gratis</p>
+                                <div class="linha"></div>
+                                <img src="assets/images/cartaos-credito/mastercard.png" alt="bandeira do cartao"
+                                    width="80px">
+                                <p id="parcela"></p>
+                                <p>Subtotal: </p>
+                                <p>Entrega: </p>
+                                <p>Cartão: </p>
+                                <p>Total</p>
+                            </div>
                         </div>
 
                         <div class="clear"></div>
+                        <div class="linha"></div>
 
                         <div class="CUPOM">
                             <label for="CUPOM" style="font-size: small;">Aplicar Cupom de Desconto</label>
@@ -364,10 +442,10 @@
 
                     <footer>
                         <button type="button" onclick="prevStep()" class="proximo_voltar">Voltar</button>
-                        <button type="submit" class="proximo_voltar">Confirmar</button>
+                        <button type="submit"  class="proximo_voltar" id="total">R$576,99</button>
                     </footer>
                 </div>
-                
+
             </form>
         </div>
     </div>
