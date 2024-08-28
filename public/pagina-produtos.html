@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADELIS</title>
+
+    <!-- ARQUIVOS CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="shortcut icon" href="assets/icons/logo-adelis-ico.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Logo e Nome do Site -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="assets/images/logo/logo-adelis-png.png" width="50" />
+                    <span class="nome ms-2">ADELIS</span>
+                </a>
+
+                <!-- Botão de colapso para telas menores -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Links da navbar -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobre">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#secoes">Seções</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#marcas">Marcas</a>
+                        </li>
+                        <!-- Botão de login -->
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#JanelaModal">Login</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MODAL -->
+    <div id="JanelaModal" class="modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-5">Faça seu Login</h5>
+                    <button type="button" data-bs-dismiss="modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                            fill="#F2F4F6">
+                            <path
+                                d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z"
+                                type="button" data-bs-dismiss="modal" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <img class="mb-5" src="assets/images/logo/logo-adelis-png.png" width="100" />
+
+                        <form id="loginForm">
+                            <div class="mb-4">
+                                <input type="email" class="form-control" id="email" placeholder="email@exemplo.com"
+                                    required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="password" class="form-control" id="password" placeholder="Senha" required>
+                            </div>
+                        </form>
+
+                        <button type="submit" form="loginForm" class="btn btn-primary col-12 mb-4" onclick="">
+                            Entrar
+                        </button>
+
+                        <a href="index.html" class="mb-1">Esqueceu sua senha?</a>
+
+                        <hr>
+
+                        <p>Não tem uma conta? <a href="cadastro.html">Crie uma aqui</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
