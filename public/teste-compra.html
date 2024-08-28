@@ -222,13 +222,8 @@
             }
 
             .bandeira_cartao {
-                width: 50px;
-                margin-bottom: 10px;
-            }
-
-            .forma_pagamento {
-                flex-direction: column;
-                align-items: flex-start;
+                margin-bottom: -8px;
+                width: 70px;
             }
 
             .informações {
@@ -264,6 +259,7 @@
             }
 
             .bandeira_cartao {
+                padding-top: 20px;
                 margin-bottom: -20px;
                 width: 100px;
                 padding: 5px;
@@ -402,48 +398,25 @@
 
                 <!--DIV DA PAGINA DE CONFIRMAÇÃO DA COMPRA-->
                 <div class="step">
-                    <header></header>
+                    <h3>Endereço de Entrega</h3>
+                    <p id="name">ddddd</p>
+                    <p id="endereco_rua">ddddd</p>
+                    <p id="casa">ddddd</p>
+                    <p id="CEP">dddddd</p>
+                    <div class="CUPOM">
+                        <label for="CUPOM" style="font-size: small;">Aplicar Cupom de Desconto</label>
+                        <input type="text" class="border_input" placeholder="CUPOM10">
+                        <button>Aplicar</button>
+                    </div>
 
-                    <main>
-                        <div class="product_container">
-                            <div class="produto">
-                                <img src="" alt="produto" id="imagem_produto" width="50%">
-                                <div class="descricao">
-                                    <h2 id="product_name"></h2>
-                                    <p id="product_description"></p>
-                                    <p id="product_price"></p>
-                                </div>
-                            </div>
+                    <div class="linha"></div>
 
-                            <div class="informações">
-                                <p>7 dias uteis para a entrega</p>
-                                <p id=""></p>
-                                <p style="color: green;">Compras acima de R$250 Frete Gratis</p>
-                                <div class="linha"></div>
-                                <img src="assets/images/cartaos-credito/mastercard.png" alt="bandeira do cartao"
-                                    width="80px">
-                                <p id="parcela"></p>
-                                <p>Subtotal: </p>
-                                <p>Entrega: </p>
-                                <p>Cartão: </p>
-                                <p>Total</p>
-                            </div>
-                        </div>
+                    <div class="produto">
+                        <h3>Prazo de entrega</h3>
+                    </div>
 
-                        <div class="clear"></div>
-                        <div class="linha"></div>
-
-                        <div class="CUPOM">
-                            <label for="CUPOM" style="font-size: small;">Aplicar Cupom de Desconto</label>
-                            <input type="text" class="border_input" placeholder="CUPOM10">
-                            <button>Aplicar</button>
-                        </div>
-                    </main>
-
-                    <footer>
-                        <button type="button" onclick="prevStep()" class="proximo_voltar">Voltar</button>
-                        <button type="submit"  class="proximo_voltar" id="total">R$576,99</button>
-                    </footer>
+                    <button type="button" onclick="prevStep()" class="proximo_voltar">Voltar</button>
+                    <button type="submit"  class="proximo_voltar" id="total">R$576,99</button>
                 </div>
 
             </form>
