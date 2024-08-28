@@ -211,9 +211,10 @@
             align-items: center;
         }
 
-        p{
+        p {
             font-weight: bold;
         }
+
         @media (max-width: 768px) {
 
             .input_min {
@@ -307,25 +308,25 @@
 
                     <div class="input_step1">
                         <div class="espaçamento-half">
-                            <input type="text" placeholder="Nome" class="input_min">
+                            <input type="text" placeholder="Nome" class="input_min required" required>
                         </div>
                         <div class="espaçamento-half">
-                            <input type="text" placeholder="Telefone" class="input_min">
+                            <input type="text" placeholder="Telefone" class="input_min required" required>
                         </div>
                         <div class="espaçamento-half">
-                            <input type="text" placeholder="Endereço" class="input_min">
+                            <input type="text" placeholder="Endereço" class="input_min required" required>
                         </div>
                         <div class="espaçamento-half">
-                            <input type="text" placeholder="Número" class="input_min">
+                            <input type="text" placeholder="Número" class="input_min required" required>
                         </div>
                         <div class="espaçamento-half">
-                            <input type="text" placeholder="Bairro" class="input_min">
+                            <input type="text" placeholder="Bairro" class="input_min required" required>
                         </div>
                         <div class="espaçamento-half cidade_estado">
-                            <input type="text" placeholder="Cidade" class="input_min cidade_estado">
+                            <input type="text" placeholder="Cidade" class="input_min cidade_estado required" required>
                         </div>
                         <div class="espaçamento-half cidade_estado">
-                            <input type="text" placeholder="Estado" class="input_min cidade_estado">
+                            <input type="text" placeholder="Estado" class="input_min cidade_estado required" required>
                         </div>
                     </div>
 
@@ -360,19 +361,19 @@
                         </div>
                     </div>
                     <div class="espaçamento-half">
-                        <input type="text" placeholder="Número do Cartão" class="input_min">
+                        <input type="text" placeholder="Número do Cartão" class="input_min required" required>
                     </div>
                     <div class="espaçamento-half">
-                        <input type="text" placeholder="Titular do Cartão" class="input_min">
+                        <input type="text" placeholder="Titular do Cartão" class="input_min required" required>
                     </div>
                     <div class="espaçamento-half">
-                        <input type="text" placeholder="Data de Vencimento" class="input_min">
+                        <input type="text" placeholder="Data de Vencimento" class="input_min required" required>
                     </div>
                     <div class="espaçamento-half">
-                        <input type="text" placeholder="CVV" class="input_min">
+                        <input type="text" placeholder="CVV" class="input_min required" required>
                     </div>
                     <div class="espaçamento-half">
-                        <input type="text" placeholder="CPF" class="input_min">
+                        <input type="text" placeholder="CPF" class="input_min required" required>
                     </div>
                     <div class="espaçamento-half">
                         <select class="input_min">
@@ -399,8 +400,8 @@
                     <p id="CEP">dddddd</p>
                     <div class="CUPOM">
                         <label for="CUPOM" style="font-size: small;">Aplicar Cupom de Desconto</label>
-                        <input type="text" class="border_input" placeholder="CUPOM10">
-                        <button>Aplicar</button>
+                        <input type="text" class="border_input" placeholder="CUPOM10" id="cupomInput">
+                        <button onclick="calcCupom">Aplicar</button>
                     </div>
 
                     <div class="linha"></div>
@@ -426,7 +427,7 @@
 
                     <p>Subtotal: </p>
                     <p>Entrega: </p>
-                    <p>Total: </p>
+                    <p id="total">Total: </p>
                     <button type="button" onclick="prevStep()" class="proximo_voltar">Voltar</button>
                     <button type="submit" class="proximo_voltar" id="total">Confirmar</button>
 
@@ -501,6 +502,25 @@
                 mensagem.textContent = 'Por favor, insira um CEP válido.';
                 mensagem.style.color = 'red';
             }
+        }
+
+        function calcCupom() {
+            const cupomInput = document.getElementById('cupomInput').value.trim().toUpperCase();
+            const totalproduto = document.getElementById('total')
+
+            let desconto = 0
+            if (cupom === 'CUPOM10') {
+                desconto = 10; 
+            } else if (cupom === 'CUPOM20') {
+                desconto = 20; 
+            } else {
+                alert('Cupom inválido!');
+                return;
+            }
+
+            const total = subtotal - desconto;
+
+            totalproduto.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
         }
     </script>
 </body>
