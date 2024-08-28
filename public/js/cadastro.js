@@ -5,7 +5,7 @@ const mensagem = document.getElementById('mensagem');
 function validatePassword() {
     if (senhaInput.value === confirmarsenhaInput.value && senhaInput.value !== '') {
         mensagem.textContent = 'Correto';
-        mensagem.style.color = 'green';
+        mensagem.style.color = '#162C49';
     } else if (senhaInput.value !== '' && confirmarsenhaInput.value !== '') {
         mensagem.textContent = 'Incorreto';
         mensagem.style.color = 'red';
