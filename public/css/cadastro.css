@@ -13,7 +13,7 @@ html {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url(https://4kwallpapers.com/images/wallpapers/ipad-air-2022-stock-dark-background-dark-mode-2732x2732-7907.png);
+    background: url(../assets/images/background-image/fundo-texturizado-azul.png);
 }
 
 /* Estilo do container */
@@ -33,7 +33,7 @@ html {
 .container h2 {
     text-align: center;
     margin: 10px;
-    color: #f2f4f6;
+    color: #162C49;
     font-family: 'montserrat';
 }
 
@@ -62,13 +62,13 @@ input {
     border-top: none;
     border-right: none;
     border-left: none;
-    border-bottom: 1px solid #f2f4f6;
+    border-bottom: 1px solid #162C49;
     outline: none;
-    color: #f2f4f6;
+    color: #162C49;
 }
 
 input::placeholder {
-    color: #f2f4f6;
+    color: #162C49;
     font-size: 20px;
     font-family: 'montserrat';
 }
@@ -86,7 +86,7 @@ label {
     padding: 10px;
     margin-bottom: 10px;
     font-size: 17px;
-    color: #f2f4f6;
+    color: #162C49;
     font-family: 'montserrat';
 }
 
@@ -119,7 +119,7 @@ button[type="submit"]:hover {
 }
 
 .ja-cadastrado>span>small {
-    color: #f2f4f6;
+    color: #162C49;
     font-family: 'montserrat';
 }
 

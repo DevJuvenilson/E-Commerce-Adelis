@@ -42,3 +42,5 @@ function loadProduct() {
 
 // Executa a função quando a página é carregada
 window.onload = loadProduct;
+
+export default products;
