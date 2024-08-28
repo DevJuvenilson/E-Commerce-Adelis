@@ -8,20 +8,33 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/produto.css">
 
     <link rel="shortcut icon" href="assets/icons/logo-adelis-ico.ico" type="image/x-icon">
 
     <style>
         body {
-            background: url();
+            background: white;
             background-size: 100%;
             background-position: center;
-            padding-top: 14.8vh;
+            padding-top: 13.5vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        @media (max-width: 1024px) {
+            body {
+                padding-top: 15.5vh;
+            }
         }
 
         header {
             width: 100%;
+            height: auto;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
             backdrop-filter: blur(5px);
             position: fixed;
@@ -31,9 +44,11 @@
         }
 
         .navbar-brand span {
-            font-size: 19px;
+            font-family: 'montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
             padding-left: 0.3em;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #162C49;
         }
 
         .navbar-nav .nav-item {
@@ -48,24 +63,22 @@
         }
 
         .navbar-nav .nav-link {
+            font-family: 'montserrat', sans-serif;
+            font-weight: 500;
             color: #162C49;
-            border-radius: 5px;
-            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
-            -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
-            -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
-            transition: box-shadow 0.5s ease, ;
         }
 
         .navbar-nav .nav-link:hover {
-            transition: 0.4s;
-            background-color: #F2F4F6;
-            box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.78);
-            -webkit-box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.78);
-            -moz-box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.78);
+            text-decoration: underline;
         }
 
         .navbar-toggler {
             border: none;
+        }
+
+        .container-fluid>div>ul>li>button {
+            font-size: 19px;
+            top: 15px;
         }
 
         .container-fluid>div>ul>li>button {
@@ -98,7 +111,7 @@
 
         .modal-body {
             text-align: center;
-            height: 65vh;
+            height: auto;
         }
 
         .modal-body>div>hr {
@@ -116,6 +129,110 @@
 
         .modal-body>div>p>a {
             color: #F2F4F6;
+        }
+
+        .container {
+            display: flex;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .imagem-esquerda {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: none;
+        }
+
+        .imagem-esquerda img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .detalhes-direita {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .detalhes-direita #product-name {
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-family: 'inter';
+            font-size: 35px;
+            color: #333;
+        }
+
+        .detalhes-direita #product-description {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .detalhes-direita #product-price {
+            font-weight: bold;
+            font-size: 36px;
+            font-family: 'inter';
+        }
+
+        .quantity-container {
+            display: flex;
+            align-items: center;
+
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background-color: #162C49;
+            color: #f2f4f6;
+            font-size: 35px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .quantity-btn:hover {
+            background-color: #406280;
+        }
+
+        #quantity {
+            width: 50px;
+            text-align: center;
+            font-size: 25px;
+            border: 1px solid #ccc;
+            height: 40px;
+        }
+
+        .botao-compra {
+            width: 200px;
+            margin-top: 20px;
+            border: none;
+            padding: 7px;
+            color: #F2F4F6;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'inter';
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+            background-color: #162C49;
+        }
+
+        .botao-compra:hover {
+            background-color: #406280;
         }
     </style>
 </head>
@@ -188,7 +305,7 @@
                                     required>
                             </div>
                             <div class="mb-4">
-                                <input type="password" class="form-control" id="password" placeholder="Senha" required>
+                                <input type="password" class="form-control no-icon" id="password" placeholder="Senha" required>
                             </div>
                         </form>
 
@@ -200,12 +317,66 @@
 
                         <hr>
 
-                        <p>Não tem uma conta? <a href="index.html">Crie uma aqui</a></p>
+                        <p>Não tem uma conta? <a href="cadastro.html">Crie uma aqui</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <main class="container">
+        <div class="imagem-esquerda">
+            <img src="assets/images/carrossel-marcas/logo-zara.png" alt="Imagem do Produto">
+        </div>
+
+        <div class="detalhes-direita">
+            <h1 id="product-name">VESTIDO</h1>
+            <p id="product-description">Pequena descrição sobre o vestido da imagem</p>
+
+            <p id="product-price">R$199,99</p>
+
+            <div class="quantity-container">
+                <button id="decrease" class="quantity-btn">-</button>
+                <input type="number" id="quantity" value="1" min="0" disabled>
+                <button id="increase" class="quantity-btn">+</button>
+            </div>
+
+            <button type="button" class="botao-compra">COMPRE AGORA</button>
+        </div>
+    </main>
+
+    <!-- PLUG-IN DE LIBRAS -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        document.getElementById('increase').addEventListener('click', function () {
+            let quantityInput = document.getElementById('quantity');
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+        });
+
+        document.getElementById('decrease').addEventListener('click', function () {
+            let quantityInput = document.getElementById('quantity');
+            if (quantityInput.value > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+            }
+        });
+
+        console.log(document.getElementById('quantity').value)
+
+    </script>
+
 </body>
 
 </html>
