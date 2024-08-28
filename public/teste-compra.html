@@ -7,6 +7,7 @@
     <title>Formulário Multi-Etapas em Modal</title>
 
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/font-family.css">
 
     <style>
         body {
@@ -26,6 +27,7 @@
         }
 
         .input_min {
+            background-color: transparent;
             border-top: none;
             border-right: none;
             border-left: none;
@@ -34,9 +36,12 @@
             width: 205px;
         }
 
+        .input_min:focus {
+            outline: none;
+        }
+
         .modal {
             display: none;
-            /* Escondido por padrão */
             position: fixed;
             z-index: 1;
             left: 0;
@@ -48,11 +53,10 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
-            box-sizing: border-box;
         }
 
         .modal-content {
-            background-color: #fff;
+            background-color: #ffffff;
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -104,10 +108,11 @@
             display: block;
         }
 
-        .cep_input {
+        .border_input {
             padding: 7px;
             border-radius: 0;
             border: 1px solid #ccc;
+            outline: none;
         }
 
         .CEP {
@@ -134,7 +139,7 @@
         .espaçamento-half {
             padding-right: 10px;
             float: left;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
         }
 
         .clear {
@@ -158,6 +163,36 @@
             float: right;
         }
 
+        .forma_pagamento {
+            padding-top: 20px;
+            display: flex;
+        }
+
+        .bandeira_cartao {
+            width: 60px;
+            margin-bottom: -8px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .informações {
+            float: right;
+            width: 50%;
+            background-color: brown;
+        }
+
+        .CUPOM{
+            padding-top: 10px;
+            width: 100%;
+        }
+
+        .produto{
+            height: 75%;
+            width: 50%;
+            display: flex;
+            background-color: #0056b3;
+        }
+
         @media (max-width: 768px) {
             .cidade_estado {
                 width: 100%;
@@ -175,7 +210,7 @@
                 padding-top: 5px;
             }
 
-            .input {
+            .input_min {
                 width: 100%;
             }
         }
@@ -197,11 +232,12 @@
                 <div class="step">
                     <div class="CEP">
                         <label for="cep">Insira seu CEP:</label>
-                        <input type="text" id="cep" placeholder="CEP" class="cep_input">
+                        <input type="text" id="cep" placeholder="CEP" class="border_input">
                         <button type="button" onclick="buscarEndereco()">Aplicar</button>
                         <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank">Não sei
                             meu
                             CEP</a>
+                        <p id="mensagem"></p>
                         <p id="localizacao"></p>
                     </div>
 
@@ -238,21 +274,40 @@
 
                 <!--DIV DA PAGINA DE REGISTRO DE CARTÃO-->
                 <div class="step">
-
-                    <div class="espaçamento-half">
-                        <input type="text" placeholder="Nome" class="input_min">
+                    <div class="forma_pagamento">
+                        <div>
+                            <input type="radio" name="forma_pagamento">
+                            <img src="assets/images/cartão-credito/visa.png" alt="cartão visa" class="bandeira_cartao">
+                        </div>
+                        <div>
+                            <input type="radio" name="forma_pagamento">
+                            <img src="assets/images/cartão-credito/mastercard.png" alt="cartão mastercard"
+                                class="bandeira_cartao">
+                        </div>
+                        <div>
+                            <input type="radio" name="forma_pagamento">
+                            <img src="assets/images/cartão-credito/paypal.png" alt="cartão paypal"
+                                class="bandeira_cartao">
+                        </div>
+                        <div>
+                            <input type="radio" name="forma_pagamento">
+                            <img src="assets/images/cartão-credito/elo.png" alt="cartão elo" class="bandeira_cartao">
+                        </div>
                     </div>
                     <div class="espaçamento-half">
-                        <input type="text" placeholder="Telefone" class="input_min">
+                        <input type="text" placeholder="Número do Cartão" class="input_min">
                     </div>
                     <div class="espaçamento-half">
-                        <input type="text" placeholder="Endereço" class="input_min">
+                        <input type="text" placeholder="Titular do Cartão" class="input_min">
                     </div>
                     <div class="espaçamento-half">
-                        <input type="text" placeholder="Número" class="input_min">
+                        <input type="text" placeholder="Data de Vencimento" class="input_min">
                     </div>
                     <div class="espaçamento-half">
-                        <input type="text" placeholder="Bairro" class="input_min">
+                        <input type="text" placeholder="CVV" class="input_min">
+                    </div>
+                    <div class="espaçamento-half">
+                        <input type="text" placeholder="CPF" class="input_min">
                     </div>
                     <div class="espaçamento-half">
                         <select class="input_min">
@@ -262,7 +317,7 @@
                             <option value="4x">4x</option>
                         </select>
                     </div>
-                    
+
 
                     <div class="clear"></div>
 
@@ -272,9 +327,47 @@
 
                 <!--DIV DA PAGINA DE CONFIRMAÇÃO DA COMPRA-->
                 <div class="step">
-                    <button type="button" onclick="prevStep()" class="proximo-voltar">Voltar</button>
-                    <button type="submit" class="proximo-voltar">Confirmar</button>
+                    <header></header>
+
+                    <main>
+                        <div class="produto">
+                            <img src="assets/images/banners-intitucionais/banner-institucionais-novidade.png" alt="produto" id="imagem_produto" width="100px"> 
+                            <h2 id="product_name">ddddddd</h2>
+                            <p id="product_description">dddddd</p>
+                            <p id="product_price">dddddddd</p>
+                        </div>
+
+                        
+
+                        <div class="informações">
+                            <p>7 dias uteis para a entrega</p>
+                            <p id=""></p>
+                            <p>Compras acima de R$250 o Frete Gratis</p>
+
+                            <div class="linha"></div>
+
+                            <p id="parcela"></p>
+                            <p>Subtotal: </p>
+                            <p>Entrega: </p>
+                            <p>Cartão: </p>
+                            <img src="" alt="bandeira do cartao">
+                        </div>
+
+                        <div class="clear"></div>
+
+                        <div class="CUPOM">
+                            <label for="CUPOM" style="font-size: small;">Aplicar Cupom de Desconto</label>
+                            <input type="text" class="border_input" placeholder="CUPOM10">
+                            <button>Aplicar</button>
+                        </div>
+                    </main>
+
+                    <footer>
+                        <button type="button" onclick="prevStep()" class="proximo_voltar">Voltar</button>
+                        <button type="submit" class="proximo_voltar">Confirmar</button>
+                    </footer>
                 </div>
+                
             </form>
         </div>
     </div>
@@ -317,6 +410,7 @@
         // Script para buscar endereço com o CEP
         function buscarEndereco() {
             const cep = document.getElementById('cep').value.replace(/\D/g, '');
+            const mensagem = document.getElementById('mensagem');
             if (cep) {
                 const url = `https://viacep.com.br/ws/${cep}/json/`;
 
@@ -324,7 +418,7 @@
                     .then(response => response.json())
                     .then(data => {
                         if (data.erro) {
-                            alert("CEP não encontrado!");
+                            mensagem.textContent = 'CEP não encontrado!';
                         } else {
                             document.getElementById('localizacao').innerText = `
                                 ${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}
@@ -336,11 +430,13 @@
                         }
                     })
                     .catch(error => {
-                        alert("Erro ao buscar o endereço!");
+                        mensagem.textContent = 'Erro ao encontrar CEP';
+                        mensagem.style.color = 'red';
                         console.error(error);
                     });
             } else {
-                alert("Por favor, insira um CEP válido.");
+                mensagem.textContent = 'Por favor, insira um CEP válido.';
+                mensagem.style.color = 'red';
             }
         }
     </script>
