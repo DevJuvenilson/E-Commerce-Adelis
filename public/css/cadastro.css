@@ -1,0 +1,165 @@
+/* Estilo para a página de cadastro */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    height: 100%;
+}
+
+/* Fundo diferente para o container */
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(../assets/images/background-image/fundo-texturizado-azul.png);
+}
+
+/* Estilo do container */
+.container {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 700px;
+    box-sizing: border-box;
+}
+
+/* Título do formulário */
+.container h2 {
+    text-align: center;
+    margin: 10px;
+    color: #162C49;
+    font-family: 'montserrat';
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="password"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #162C49;
+    outline: none;
+    color: #162C49;
+}
+
+input::placeholder {
+    color: #162C49;
+    font-size: 20px;
+    font-family: 'montserrat';
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-group input {
+    width: 48%;
+}
+
+label {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    color: #162C49;
+    font-family: 'montserrat';
+}
+
+.botao-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botão de cadastro */
+button[type="submit"] {
+    width: 16em;
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    font-size: 20px;
+    font-family: 'montserrat';
+    border: none;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #242424;
+}
+
+.ja-cadastrado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ja-cadastrado>span>small {
+    color: #162C49;
+    font-family: 'montserrat';
+}
+
+.no-icon::-webkit-calendar-picker-indicator {
+    pointer-events: none;
+    display: none;
+}
+
+.no-icon {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .input-group {
+        flex-direction: column;
+    }
+
+    .input-group input {
+        width: 100%;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container h2 {
+        font-size: 24px;
+    }
+
+    input::placeholder {
+        font-size: 16px;
+    }
+
+    button[type="submit"] {
+        font-size: 18px;
+        padding: 12px;
+    }
+}

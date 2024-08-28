@@ -7,3 +7,608 @@
     font-family: 'inter';
     src: url(../assets/fonts/Inter-VariableFont_opsz\,wght.ttf);
 }
+
+body {
+    background: white;
+    background-size: 100%;
+    background-position: center;
+    padding-top: 13.5vh;
+}
+
+@media (max-width: 1024px) {
+    body {
+        padding-top: 15.5vh;
+    }
+}
+
+header {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.carousel-inner {
+    width: 100%;
+    height: auto;
+    /* Remove a altura fixa para permitir ajuste automático */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    /* Mantém a proporção da imagem */
+    object-fit: cover;
+    /* Cobre o container sem distorcer a imagem */
+}
+
+/* Estilos para desktops */
+@media (min-width: 992px) {
+    .first {
+        background-image: url(../assets/images/banners-promocionais/1/Banner-promocional\(1\)-grande.png);
+        background-size: cover;
+        background-position: center;
+        height: 525px;
+        /* Altura desejada */
+    }
+
+    .first img {
+        display: none;
+        /* Oculta a tag img para evitar conflitos */
+    }
+
+    .second {
+        background-image: url(../assets/images/banners-promocionais/2/Banner-promocional\(2\)-grande.png);
+        background-size: cover;
+        background-position: center;
+        height: 525px;
+        /* Altura desejada */
+    }
+
+    .second img {
+        display: none;
+        /* Oculta a tag img para evitar conflitos */
+    }
+
+    .third {
+        background-image: url(../assets/images/banners-promocionais/3/Banner-promocional\(3\)-grande.png);
+        background-size: cover;
+        background-position: center;
+        height: 525px;
+        /* Altura desejada */
+    }
+
+    .third img {
+        display: none;
+        /* Oculta a tag img para evitar conflitos */
+    }
+}
+
+/* Estilos para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .first {
+        background-image: url(../assets/images/banners-promocionais/1/Banner-promocional\(1\)-medio.png);
+        background-size: cover;
+        background-position: center;
+        min-height: 400px;
+        height: auto;
+        /* Altura desejada */
+    }
+
+    .first img {
+        display: none;
+        /* Oculta a tag img para evitar conflitos */
+    }
+
+    .second {
+        background-image: url(../assets/images/banners-promocionais/2/Banner-promocional\(2\)-medio.png);
+        background-size: cover;
+        background-position: center;
+        min-height: 400px;
+        height: auto;
+        /* Altura desejada */
+    }
+
+    .second img {
+        display: none;
+        /* Oculta a tag img para evitar conflitos */
+    }
+
+    .third {
+        background-image: url(../assets/images/banners-promocionais/3/Banner-promocional\(3\)-medio.png);
+        background-size: cover;
+        background-position: center;
+        min-height: 400px;
+        height: auto;
+        /* Altura desejada */
+    }
+
+    .third img {
+        display: none;
+        /* Oculta a tag img para evitar conflitos */
+    }
+}
+
+/* Estilos para celulares */
+@media (max-width: 767px) {
+    .first {
+        background-image: url(../assets/images/banners-promocionais/1/Banner-promocional\(1\)-pequeno.png);
+        background-size: cover;
+        background-position: center;
+        min-height: 300px;
+        height: auto;
+        /* Altura desejada */
+    }
+
+    .first img {
+        display: none;
+        /* Oculta a tag img para evitar conflitos */
+    }
+
+    .second {
+        background-image: url(../assets/images/banners-promocionais/2/Banner-promocional\(2\)-pequeno.png);
+        background-size: cover;
+        background-position: center;
+        min-height: 300px;
+        height: auto;
+        /* Altura desejada */
+    }
+
+    .second img {
+        display: none;
+        /* Oculta a tag img para evitar conflitos */
+    }
+
+    .third {
+        background-image: url(../assets/images/banners-promocionais/3/Banner-promocional\(3\)-pequeno.png);
+        background-size: cover;
+        background-position: center;
+        min-height: 300px;
+        height: auto;
+        /* Altura desejada */
+    }
+
+    .third img {
+        display: none;
+        /* Oculta a tag img para evitar conflitos */
+    }
+}
+
+
+.container-fluid {
+    padding: 0.5em 2em;
+}
+
+.navbar-brand span {
+    font-family: 'montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    padding-left: 0.3em;
+    color: #162C49;
+}
+
+.navbar-nav .nav-item {
+    font-size: 19px;
+    padding-right: 1em;
+}
+
+@media (max-width: 990px) {
+    .navbar-nav .nav-item {
+        margin-bottom: 0.5em;
+    }
+}
+
+.navbar-nav .nav-link {
+    font-family: 'montserrat', sans-serif;
+    font-weight: 500;
+    color: #162C49;
+}
+
+.navbar-nav .nav-link:hover {
+    text-decoration: underline;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.container-fluid>div>ul>li>button {
+    font-size: 19px;
+    top: 15px;
+}
+
+.modal-header>h5 {
+    color: #F2F4F6;
+}
+
+.modal-header>button {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-header>button>svg {
+    padding: 0;
+    margin: 0;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.modal-body {
+    text-align: center;
+    height: auto;
+}
+
+.modal-body>div>hr {
+    color: #F2F4F6;
+}
+
+.modal-body>div>a {
+    margin-top: 10px;
+    color: #F2F4F6;
+}
+
+.modal-body>div>p {
+    color: #F2F4F6;
+}
+
+.modal-body>div>p>a {
+    color: #F2F4F6;
+}
+
+.sobre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10vh 5vh;
+}
+
+.sobre-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.texto-sobre-esquerda,
+.texto-sobre-direita,
+.imagem-sobre {
+    flex: 1;
+    padding: 20px;
+}
+
+.texto-sobre-direita>h2,
+.texto-sobre-esquerda>h2 {
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-family: 'montserrat';
+}
+
+.texto-sobre-direita>p,
+.texto-sobre-esquerda>p {
+    text-align: justify;
+    font-size: 1.4em;
+    font-weight: 500;
+    font-family: 'inter';
+}
+
+.imagem-sobre {
+    text-align: center;
+}
+
+.imagem-sobre img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para dispositivos menores */
+@media (max-width: 768px) {
+    .sobre-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto-sobre-esquerda,
+    .texto-sobre-direita {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .imagem-sobre {
+        padding: 20px 0;
+    }
+}
+
+.novidade {
+    display: flex;
+    justify-content: center;
+    /* Alinha todo o conteúdo da div .novidade ao centro da página */
+    align-items: center;
+    /* Centraliza verticalmente o conteúdo dentro da .novidade */
+    margin: 20px auto;
+    /* Define uma margem automática nas laterais para garantir que a div esteja centralizada horizontalmente */
+    max-width: 80%;
+    /* Limita a largura total da div para que ela não ocupe 100% da largura da página */
+    padding: 10vh 5vh;
+}
+
+.imagem-novidade {
+    flex: 1;
+    /* A imagem ocupa 50% do espaço disponível */
+    text-align: center;
+    /* Centraliza a imagem dentro do seu próprio contêiner */
+}
+
+.imagem-novidade>a>img {
+    width: 100%;
+}
+
+.texto-novidade {
+    flex: 1;
+    /* O texto ocupa 50% do espaço disponível */
+    padding-left: 2em;
+    /* Espaçamento entre a imagem e o texto */
+}
+
+.texto-novidade h2 {
+    margin-bottom: 1em;
+    /* Espaçamento entre o título e o parágrafo */
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    font-family: 'montserrat';
+}
+
+.texto-novidade p {
+    margin: 0;
+    /* Remove a margem padrão do parágrafo */
+    text-align: justify;
+    font-size: 1.7em;
+    font-weight: 500;
+    font-family: 'inter';
+}
+
+/* Estilos para dispositivos menores */
+@media (max-width: 768px) {
+    .novidade {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto-novidade {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .imagem-novidade {
+        padding: 20px 0;
+    }
+}
+
+.sustentabilidade {
+    display: flex;
+    justify-content: center;
+    /* Alinha todo o conteúdo da div .sustentabilidade ao centro da página */
+    align-items: center;
+    /* Centraliza verticalmente o conteúdo dentro da .sustentabilidade */
+    margin: 20px auto;
+    /* Define uma margem automática nas laterais para garantir que a div esteja centralizada horizontalmente */
+    max-width: 80%;
+    /* Limita a largura total da div para que ela não ocupe 100% da largura da página */
+    padding: 10vh 5vh;
+}
+
+.imagem-sustentabilidade {
+    flex: 1;
+    /* A imagem ocupa 50% do espaço disponível */
+    text-align: center;
+    /* Centraliza a imagem dentro do seu próprio contêiner */
+}
+
+.imagem-sustentabilidade>a>img {
+    width: 100%;
+}
+
+.texto-sustentabilidade {
+    flex: 1;
+    /* O texto ocupa 50% do espaço disponível */
+    padding-left: 2em;
+    /* Espaçamento entre a imagem e o texto */
+}
+
+.texto-sustentabilidade h2 {
+    margin-bottom: 1em;
+    /* Espaçamento entre o título e o parágrafo */
+    text-align: center;
+    font-weight: bold;
+    font-family: 'montserrat';
+}
+
+.texto-sustentabilidade p {
+    margin: 0;
+    /* Remove a margem padrão do parágrafo */
+    text-align: justify;
+    font-size: 1.3em;
+    font-weight: 500;
+    font-family: 'inter';
+}
+
+/* Estilos para dispositivos menores */
+@media (max-width: 768px) {
+    .sustentabilidade {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto-sustentabilidade {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .imagem-sustentabilidade {
+        padding: 20px 0;
+    }
+}
+
+.marcas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10vh 5vh;
+}
+
+.marcas-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.texto-marcas-esquerda,
+.carrossel-marcas-direita,
+.imagem-marcas {
+    flex: 1;
+    padding: 20px;
+}
+
+.carrossel-marcas-direita>h2,
+.texto-marcas-esquerda>h2 {
+    padding-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'montserrat';
+}
+
+.carrossel-marcas-direita>p,
+.texto-marcas-esquerda>p {
+    text-align: justify;
+    font-size: 1.3em;
+    font-weight: 500;
+    font-family: 'inter';
+}
+
+.imagem-marcas {
+    text-align: center;
+}
+
+.imagem-marcas img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .carousel-item {
+        background-size: cover;
+        background-position: center;
+        min-height: 300px;
+        height: auto;
+        /* Altura desejada */
+    }
+
+    .carousel{
+        width: 80%;
+        margin: 0.5em auto;
+    }
+}
+
+/* Estilos para dispositivos menores */
+@media (max-width: 768px) {
+    .marcas-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto-marcas-esquerda,
+    .texto-marcas-direita {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .imagem-marcas {
+        padding: 20px 0;
+    }
+}
+
+footer {
+    background-color: #0F243F;
+    text-align: center;
+    padding: 20px;
+}
+
+footer > a {
+    text-decoration: none;
+}
+
+.titulo-footer {
+    font-family: 'montserrat';
+    color: #F2F4F6;
+    font-size: 50px;
+    font-weight: 600;
+    padding-top: 1em;
+    margin-bottom: 20px;
+}
+
+.footer-list {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-item {
+    margin: 0;
+    font-family: 'montserrat';
+    color: #F2F4F6;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #F2F4F6;
+    font-size: 16px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* Espaçamento entre os ícones */
+    margin-bottom: 20px;
+}
+
+.footer-social > a > img {
+    display: block;
+    margin: 0 auto;
+}
+
+
+.footer-essencial {
+    font-family: 'inter';
+    color: #F2F4F6;
+    margin-top: 20px;
+    font-size: 14px;
+}
