@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADELIS</title>
+    <title>ADELIS - Produtos</title>
 
     <!-- ARQUIVOS CSS -->
     <link rel="stylesheet" href="css/normalize.css">
@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="css/index.css">
 
     <link rel="shortcut icon" href="assets/icons/logo-adelis-ico.ico" type="image/x-icon">
+
+    <style>
+        main{
+            padding-top: 50px;
+        }
+    </style>
 </head>
 
 <body>
@@ -101,8 +107,15 @@
         </div>
     </div>
 
-    <main>
-        
+    <main class="container my-5">
+        <div class="row" id="productContainer">
+            <!-- Os produtos serão inseridos aqui pelo JavaScript -->
+        </div>
+
+        <div class="text-center mt-4" id="loadMoreContainer">
+            <button class="btn btn-primary" id="loadMoreBtn">Ver Mais</button>
+            <button class="btn btn-secondary d-none" id="loadLessBtn">Ver Menos</button>
+        </div>
     </main>
 
     <div vw class="enabled">
@@ -118,8 +131,68 @@
 
     <script src="../bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="js/script-exemplo.js"></script>
-    <script src="js/produto.js"></script>
+    <script>
+        // Lista de produtos
+        const products = [
+            { img: 'produto1.jpg', description: 'Descrição do produto 1', price: 'R$ 49,90' },
+            { img: 'produto2.jpg', description: 'Descrição do produto 2', price: 'R$ 59,90' },
+            { img: 'produto3.jpg', description: 'Descrição do produto 3', price: 'R$ 69,90' },
+            { img: 'produto4.jpg', description: 'Descrição do produto 4', price: 'R$ 79,90' },
+            { img: 'produto5.jpg', description: 'Descrição do produto 5', price: 'R$ 89,90' },
+            { img: 'produto6.jpg', description: 'Descrição do produto 6', price: 'R$ 99,90' },
+            { img: 'produto7.jpg', description: 'Descrição do produto 7',  price: 'R$ 109,90' },
+            { img: 'produto8.jpg', description: 'Descrição do produto 8',  price: 'R$ 119,90' },
+            { img: 'produto9.jpg', description: 'Descrição do produto 9',  price: 'R$ 129,90' },
+            { img: 'produto10.jpg', description: 'Descrição do produto 10',  price: 'R$ 139,90' },
+            { img: 'produto11.jpg', description: 'Descrição do produto 11', price: 'R$ 149,90' },
+            { img: 'produto12.jpg', description: 'Descrição do produto 12', price: 'R$ 159,90' },
+        ];
+
+        let productsPerPage = 6;
+        let currentPage = 1;
+
+        function renderProducts() {
+            const container = document.getElementById('productContainer');
+            container.innerHTML = ''; // Limpa o container
+
+            const startIndex = (currentPage - 1) * productsPerPage;
+            const endIndex = currentPage * productsPerPage;
+
+            const productsToShow = products.slice(0, endIndex);
+            productsToShow.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.classList.add('col-md-4', 'mb-4');
+
+                productDiv.innerHTML = `
+                    <div class="card h-100">
+                        <img src="${product.img}" class="card-img-top" alt="${product.name}">
+                        <div class="card-body">
+                            <p class="card-text">${product.description}</p>
+                            <p class="card-text"><strong>${product.price}</strong></p>
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(productDiv);
+            });
+
+            document.getElementById('loadMoreBtn').classList.toggle('d-none', endIndex >= products.length);
+            document.getElementById('loadLessBtn').classList.toggle('d-none', currentPage === 1);
+        }
+
+        document.getElementById('loadMoreBtn').addEventListener('click', () => {
+            currentPage++;
+            renderProducts();
+        });
+
+        document.getElementById('loadLessBtn').addEventListener('click', () => {
+            currentPage--;
+            renderProducts();
+        });
+
+        // Renderiza os produtos iniciais
+        renderProducts();
+    </script>
 </body>
 
 </html>
