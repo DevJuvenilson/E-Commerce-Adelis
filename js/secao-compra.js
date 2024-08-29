@@ -31,6 +31,30 @@ async function getProductIdFromUrl() {
     return parseInt(params.get("id"));
 }
 
+// Função para carregar as informações do produto
+async function loadProduct() {
+    const productId = await getProductIdFromUrl();
+    const product = roupas.find(p => p.id === productId);
+    const divDetalhes = document.getElementById("div-conteudo");
+
+    if (product) {
+        document.getElementById("div-imagem").innerHTML = `<img src="${product.imagem}" class="card-img-top" alt="${product.description}">`;
+        divDetalhes.setAttribute('data-price', product.price.toFixed(2))
+        document.getElementById("product-name").textContent = product.name;
+        document.getElementById("product-description").textContent = product.description;
+        document.getElementById("product-price").textContent = product.price.toFixed(2).replace(".", ",");
+        document.getElementById('title').textContent = product.name;
+        document.getElementById('botao-compra').innerHTML = `<a id="link-compra" href="secao-compra.html?id=${product.id}"><button type="button" class="botao-compra open-modal-btn" onclick="openModal()">COMPRE AGORA</button></a>`
+    } else {
+        document.getElementById('title').textContent = "Product not found";
+        document.getElementById("div-imagem").innerHTML = `<img src="assets/images/tratar-erros/error.png" alt="Imagem do Produto">`;
+        divDetalhes.setAttribute('data-price', 0.00);
+        document.getElementById("product-name").textContent = "Product not found";
+        document.getElementById("product-description").textContent = "Sinto muito, não encontramos o produto que você procurava :(";
+        document.getElementById("product-price").textContent = "0,00";
+    }
+}
+
 // Funções para abrir e fechar o modal
 function openModal() {
     document.getElementById("myModal").style.display = "flex";
@@ -116,3 +140,6 @@ function calcCupom() {
 
     totalproduto.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
 }
+
+// Executa a função quando a página é carregada
+window.onload = loadProduct;
