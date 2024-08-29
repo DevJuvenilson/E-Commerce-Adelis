@@ -193,12 +193,16 @@ a {
     margin-right: 15px;
 }
 
+.img-produto {
+    width: 100px;
+}
+
 .product_container {
     display: flex;
     align-items: center;
 }
 
-p {
+#product-name, #product-price {
     font-weight: bold;
 }
 

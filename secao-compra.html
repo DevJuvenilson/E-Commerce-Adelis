@@ -41,7 +41,7 @@
 
                     <div class="input_step1">
                         <div class="espaçamento-half">
-                            <input type="text" placeholder="Nome" class="input_min required" required>
+                            <input type="text" placeholder="Nome" class="input_min required" id="nome-pessoa" required>
                         </div>
                         <div class="espaçamento-half">
                             <input type="text" placeholder="Telefone" maxlength="14" class="input_min required" required>
@@ -145,22 +145,21 @@
                     <p style="color: green;">Compra acima de R$250,89 Frete gratis</p>
 
                     <h3>Produtos</h3>
-                    <div class="produto">
+                    <div class="produto" id="div-conteudo">
                         <div class="product_container">
-                            <div class="imagem">
-                                <img src="" alt="Imagem do Produto" width="100">
+                            <div class="imagem" id="div-imagem">
                             </div>
                             <div class="descricao">
-                                <p id="product_name">dddddd</p>
-                                <p id="quantidade_produto">Quantidade: ddd</p>
-                                <p id="product_price">Preço: ddddddd</p>
+                                <h4 id="product-name"></h4>
+                                <p id="product-description"></p>
+                                <p id="product-price"></p>
                             </div>
                         </div>
                     </div>
 
-                    <p>Subtotal: </p>
-                    <p>Entrega: </p>
-                    <p id="total">Total: </p>
+                    <p id="subtotal"></p>
+                    <p id="entrega"></p>
+                    <p id="total"></p>
                     <button type="button" onclick="prevStep()" class="proximo_voltar">Voltar</button>
                     <button type="submit" class="proximo_voltar" id="total">Confirmar</button>
 
