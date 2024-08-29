@@ -44,6 +44,7 @@ async function loadProduct() {
         document.getElementById('title').textContent = product.name;
     } else {
         document.getElementById('title').textContent = "Product not found";
+        document.getElementById("div-imagem").innerHTML = `<img src="assets/images/tratar-erros/error.png" alt="Imagem do Produto">`;
         divDetalhes.setAttribute('data-price', 0.00);
         document.getElementById("product-name").textContent = "Product not found";
         document.getElementById("product-description").textContent = "Sinto muito, não encontramos o produto que você procurava :(";
