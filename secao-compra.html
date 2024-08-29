@@ -44,7 +44,8 @@
                             <input type="text" placeholder="Nome" class="input_min required" id="nome-pessoa" required>
                         </div>
                         <div class="espaçamento-half">
-                            <input type="text" placeholder="Telefone" maxlength="14" class="input_min required" required>
+                            <input type="text" placeholder="Telefone" maxlength="14" class="input_min required"
+                                required>
                         </div>
                         <div class="espaçamento-half">
                             <input type="text" placeholder="Endereço" class="input_min required" required>
@@ -106,7 +107,7 @@
                         <input type="text" placeholder="CVV" maxlength="3" class="input_min required" required>
                     </div>
                     <div class="espaçamento-half">
-                        <input type="text" placeholder="CPF"maxlength="14" class="input_min required" required>
+                        <input type="text" placeholder="CPF" maxlength="14" class="input_min required" required>
                     </div>
                     <div class="espaçamento-half">
                         <select class="input_min">
@@ -161,12 +162,23 @@
                     <p id="total"></p>
                     <button type="button" onclick="prevStep()" class="proximo_voltar">Voltar</button>
                     <button type="submit" class="proximo_voltar" id="total">Confirmar</button>
-
-
             </form>
         </div>
     </div>
 
+    <!-- PLUG-IN DE LIBRAS -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
     <script src="js/secao-compra.js"></script>
 </body>
+
 </html>
