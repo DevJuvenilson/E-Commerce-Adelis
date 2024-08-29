@@ -1,10 +1,10 @@
 const roupas = [
-    { id: 1, imagem: 'assets/images/produtos/Captura_de_tela_2024-08-28_201736-removebg-preview.png', name: "CALÇA CARGO", description: 'Calça Cargo', price:  59.90, gender: 'masculino', category: 'calça' },
-    { id: 2, imagem: 'assets/images/produtos/Captura_de_tela_2024-08-28_201703-removebg-preview.png', name: "CALÇA CARGO", description: 'Calça Cargo com Bolso', price:  49.90, gender: 'feminino', category: 'calça' },
-    { id: 3, imagem: 'assets/images/produtos/Captura_de_tela_2024-08-28_201800-removebg-preview.png', name: "CALÇA ", description: 'Calça com Textura', price:  69.90, gender: 'feminino', category: 'calça' },
-    { id: 4, imagem: 'assets/images/produtos/Captura_de_tela_2024-08-28_201826-removebg-preview.png', name: "CALÇA SLIM", description: 'Calça Slim Fit', price:  79.90, gender: 'masculino', category: 'calça' },
-    { id: 5, imagem: 'assets/images/produtos/calça-cargo-fit.png', name: "CALÇA CARGO", description: 'Calça Cargo Fit', price:  89.90, gender: 'masculino', category: 'calça' },
-    { id: 6, imagem: 'assets/images/produtos/camiseta-de-moletom.png', name: "CAMISETA", description: 'Camiseta de Moletom', price:  99.90, gender: 'feminino', category: 'camiseta' },
+    { id: 1, imagem: 'assets/images/produtos/Captura_de_tela_2024-08-28_201736-removebg-preview.png', name: "CALÇA CARGO", description: 'Calça Cargo', price: 59.90, gender: 'masculino', category: 'calça' },
+    { id: 2, imagem: 'assets/images/produtos/Captura_de_tela_2024-08-28_201703-removebg-preview.png', name: "CALÇA CARGO", description: 'Calça Cargo com Bolso', price: 49.90, gender: 'feminino', category: 'calça' },
+    { id: 3, imagem: 'assets/images/produtos/Captura_de_tela_2024-08-28_201800-removebg-preview.png', name: "CALÇA ", description: 'Calça com Textura', price: 69.90, gender: 'feminino', category: 'calça' },
+    { id: 4, imagem: 'assets/images/produtos/Captura_de_tela_2024-08-28_201826-removebg-preview.png', name: "CALÇA SLIM", description: 'Calça Slim Fit', price: 79.90, gender: 'masculino', category: 'calça' },
+    { id: 5, imagem: 'assets/images/produtos/calça-cargo-fit.png', name: "CALÇA CARGO", description: 'Calça Cargo Fit', price: 89.90, gender: 'masculino', category: 'calça' },
+    { id: 6, imagem: 'assets/images/produtos/camiseta-de-moletom.png', name: "CAMISETA", description: 'Camiseta de Moletom', price: 99.90, gender: 'feminino', category: 'camiseta' },
     { id: 7, imagem: 'assets/images/produtos/conjunto-minnie-mouse.png', name: "CONJUNTO", description: 'Conjunto Minnie Mouse', price: 109.90, gender: 'feminino', category: 'camiseta' },
     { id: 8, imagem: 'assets/images/produtos/jaqueta-bomber.png', name: "JAUQETA", description: 'Jaqueta Bomber', price: 119.90, gender: 'masculino', category: 'jaqueta' },
     { id: 9, imagem: 'assets/images/produtos/jaqueta-leve-acolchoada.png', name: "JAQUETA", description: 'Jaqueta Leve Acolchoada', price: 129.90, gender: 'feminino', category: 'jaqueta' },
@@ -18,11 +18,11 @@ const roupas = [
     { id: 17, imagem: `assets/images/roupas/vestido.jpg`, name: "VESTIDO", description: "Vestido curto de decote redondo com decote em V.", price: 289, gender: 'feminino', category: 'vestido' },
     { id: 18, imagem: 'assets/images/roupas/bolsa.jpg"', name: "BOLSA TOTE BAG", description: "Bolsa formato tote bag. Alça de ombro.", price: 279, gender: 'feminino', category: 'bolsa' },
     { id: 19, imagem: 'assets/images/roupas/camisa.jpg', name: "CAMISA DE MANGA CURTA", description: "Camisa confeccionada com linho.", price: 199, gender: 'feminino', category: 'camiseta' },
-    { id: 20, imagem: 'produto8.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 20', price:  119.90, gender: 'masculino', category: 'jaqueta' },
-    { id: 21, imagem: 'produto9.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 21', price:  129.90, gender: 'feminino', category: 'calça' },
-    { id: 22, imagem: 'produto10.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 22', price:  139.90, gender: 'masculino', category: 'camiseta' },
-    { id: 23, imagem: 'produto11.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 23', price:  149.90, gender: 'feminino', category: 'jaqueta' },
-    { id: 24, imagem: 'produto12.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 24', price:  159.90, gender: 'masculino', category: 'camiseta' },
+    { id: 20, imagem: 'produto8.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 20', price: 119.90, gender: 'masculino', category: 'jaqueta' },
+    { id: 21, imagem: 'produto9.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 21', price: 129.90, gender: 'feminino', category: 'calça' },
+    { id: 22, imagem: 'produto10.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 22', price: 139.90, gender: 'masculino', category: 'camiseta' },
+    { id: 23, imagem: 'produto11.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 23', price: 149.90, gender: 'feminino', category: 'jaqueta' },
+    { id: 24, imagem: 'produto12.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 24', price: 159.90, gender: 'masculino', category: 'camiseta' },
 ];
 
 // Funções para abrir e fechar o modal
@@ -96,17 +96,54 @@ function calcCupom() {
     const cupomInput = document.getElementById('cupomInput').value.trim().toUpperCase();
     const totalproduto = document.getElementById('total')
     let desconto = 0;
-    
+
     if (cupomInput === 'CUPOM10') {
-        desconto = 10; 
+        desconto = 10;
     } else if (cupomInput === 'CUPOM20') {
-        desconto = 20; 
+        desconto = 20;
     } else {
         desconto = 0;
         return;
     }
 
     return desconto
+}
+
+async function loadAddress() {
+    const cep = document.getElementById('cep').value.replace(/\D/g, '');
+    const mensagem = document.getElementById('endereco-rua');
+    const nomePessoa = document.getElementById("nome-pessoa")
+
+    if (cep) {
+        const url = `https://viacep.com.br/ws/${cep}/json/`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.erro) {
+                    mensagem.textContent = 'CEP não encontrado!';
+                } else {
+                    document.getElementById('localizacao').innerText = `
+                        ${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}
+                    `;
+                    document.querySelector('input[placeholder="Endereço"]').value = data.logradouro;
+                    document.querySelector('input[placeholder="Bairro"]').value = data.bairro;
+                    document.querySelector('input[placeholder="Cidade"]').value = data.localidade;
+                    document.querySelector('input[placeholder="Estado"]').value = data.uf;
+                }
+            })
+            .catch(error => {
+                mensagem.textContent = 'Erro ao encontrar CEP';
+                mensagem.style.color = 'red';
+                console.error(error);
+            });
+    } else {
+        mensagem.textContent = 'Por favor, insira um CEP válido.';
+        mensagem.style.color = 'red';
+    }
+
+    document.getElementById("CEP").textContent = `${cep}`;
+    document.getElementById("name").textContent = `${nomePessoa}`;
 }
 
 // Função para obter o ID do produto a partir da URL
@@ -120,7 +157,7 @@ async function loadProduct() {
     const productId = await getProductIdFromUrl();
     const product = roupas.find(p => p.id === productId);
     const divDetalhes = document.getElementById("div-conteudo");
-    let subtotal = product.price;  
+    let subtotal = product.price;
     let entrega = product.price * 0.05;
 
     if (subtotal > 250.89) {
