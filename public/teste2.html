@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADELIS - Produtos</title>
+
+    <!-- ARQUIVOS CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="shortcut icon" href="assets/icons/logo-adelis-ico.ico" type="image/x-icon">
+
+    <style>
+        main {
+            padding-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Logo e Nome do Site -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="assets/images/logo/logo-adelis-png.png" width="50" />
+                    <span class="nome ms-2">ADELIS</span>
+                </a>
+
+                <!-- Botão de colapso para telas menores -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Links da navbar -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobre">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#secoes">Seções</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#marcas">Marcas</a>
+                        </li>
+                        <!-- Botão de login -->
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#JanelaModal">Login</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MODAL -->
+    <div id="JanelaModal" class="modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-5">Faça seu Login</h5>
+                    <button type="button" data-bs-dismiss="modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                            fill="#F2F4F6">
+                            <path
+                                d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z"
+                                type="button" data-bs-dismiss="modal" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <img class="mb-5" src="assets/images/logo/logo-adelis-png.png" width="100" />
+
+                        <form id="loginForm">
+                            <div class="mb-4">
+                                <input type="email" class="form-control" id="email" placeholder="email@exemplo.com"
+                                    required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="password" class="form-control" id="password" placeholder="Senha" required>
+                            </div>
+                        </form>
+
+                        <button type="submit" form="loginForm" class="btn btn-primary col-12 mb-4" onclick="">
+                            Entrar
+                        </button>
+
+                        <a href="index.html" class="mb-1">Esqueceu sua senha?</a>
+
+                        <hr>
+
+                        <p>Não tem uma conta? <a href="cadastro.html">Crie uma aqui</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container my-5">
+
+        <!-- Filtros -->
+        <div class="mb-4">
+            <div class="row">
+                <div class="col-md-2">
+                    <label for="genderFilter" class="form-label ">Gênero</label>
+                    <select id="genderFilter" class="form-select ">
+                        <option value="">Todos</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="categoryFilter" class="form-label">Categoria</label>
+                    <select id="categoryFilter" class="form-select">
+                        <option value="">Todas</option>
+                        <option value="calça">Calça</option>
+                        <option value="camiseta">Camiseta</option>
+                        <option value="jaqueta">Jaqueta</option>
+                        <option value="vestido">Vestido</option>
+                        <!-- Adicione mais categorias conforme necessário -->
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="productContainer">
+            <!-- Os produtos serão inseridos aqui pelo JavaScript -->
+        </div>
+
+        <div class="text-center mt-4" id="loadMoreContainer">
+            <button class="btn btn-primary" id="loadMoreBtn">Ver Mais</button>
+            <button class="btn btn-secondary d-none" id="loadLessBtn">Ver Menos</button>
+        </div>
+    </main>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Lista de produtos com informações de gênero e categoria
+        const products = [
+            { img: 'assets/images/produtos/Captura_de_tela_2024-08-28_201703-removebg-preview.png', description: 'Calça Cargo com Bolso', price: 'R$ 49,90', gender: 'feminino', category: 'calça' },
+            { img: 'assets/images/produtos/Captura_de_tela_2024-08-28_201736-removebg-preview.png', description: 'Calça Cargo', price: 'R$ 59,90', gender: 'masculino', category: 'calça' },
+            { img: 'assets/images/produtos/Captura_de_tela_2024-08-28_201800-removebg-preview.png', description: 'Calça com Textura', price: 'R$ 69,90', gender: 'feminino', category: 'calça' },
+            { img: 'assets/images/produtos/Captura_de_tela_2024-08-28_201826-removebg-preview.png', description: 'Calça Slim Fit', price: 'R$ 79,90', gender: 'masculino', category: 'calça' },
+            { img: 'assets/images/produtos/calça-cargo-fit.png', description: 'Calça Cargo Fit', price: 'R$ 89,90', gender: 'masculino', category: 'calça' },
+            { img: 'assets/images/produtos/camiseta-de-moletom.png', description: 'Camiseta de Moletom', price: 'R$ 99,90', gender: 'feminino', category: 'camiseta' },
+            { img: 'assets/images/produtos/conjunto-minnie-mouse.png', description: 'Conjunto Minnie Mouse', price: 'R$ 109,90', gender: 'feminino', category: 'camiseta' },
+            { img: 'assets/images/produtos/jaqueta-bomber.png', description: 'Jaqueta Bomber', price: 'R$ 119,90', gender: 'masculino', category: 'jaqueta' },
+            { img: 'assets/images/produtos/jaqueta-leve-acolchoada.png', description: 'Jaqueta Leve Acolchoada', price: 'R$ 129,90', gender: 'feminino', category: 'jaqueta' },
+            { img: 'assets/images/produtos/macacao-fluido.png', description: 'Macacão Fluido', price: 'R$ 139,90', gender: 'feminino', category: 'vestido' },
+            { img: 'assets/images/produtos/moletom-com-capuz.png', description: 'Moletom com Capuz', price: 'R$ 149,90', gender: 'masculino', category: 'camiseta' },
+            { img: 'assets/images/produtos/moletom-com-ziper.png', description: 'Moletom com Ziper', price: 'R$ 159,90', gender: 'feminino', category: 'camiseta' },
+            { img: 'assets/images/produtos/vestido-com-nervuras.png', description: 'Vestido com Nervuras', price: 'R$ 49,90', gender: 'feminino', category: 'vestido' },
+            { img: 'assets/images/produtos/vestido-estilo-lengerie.png', description: 'Vestido Estilo Lengerie', price: 'R$ 59,90', gender: 'feminino', category: 'vestido' },
+            { img: 'assets/images/produtos/jeans-zw-the-marine.png', description: 'Jeans ZW the Marine', price: 'R$ 69,90', gender: 'masculino', category: 'calça' },
+            { img: 'assets/images/produtos/jaqueta-biker-cropped.png', description: 'Jaqueta Biker Cropped', price: 'R$ 79,90', gender: 'masculino', category: 'jaqueta' },
+            { img: 'produto5.jpg', description: 'Descrição do produto 17', price: 'R$ 89,90', gender: 'feminino', category: 'calça' },
+            { img: 'produto6.jpg', description: 'Descrição do produto 18', price: 'R$ 99,90', gender: 'masculino', category: 'camiseta' },
+            { img: 'produto7.jpg', description: 'Descrição do produto 19', price: 'R$ 109,90', gender: 'feminino', category: 'vestido' },
+            { img: 'produto8.jpg', description: 'Descrição do produto 20', price: 'R$ 119,90', gender: 'masculino', category: 'jaqueta' },
+            { img: 'produto9.jpg', description: 'Descrição do produto 21', price: 'R$ 129,90', gender: 'feminino', category: 'calça' },
+            { img: 'produto10.jpg', description: 'Descrição do produto 22', price: 'R$ 139,90', gender: 'masculino', category: 'camiseta' },
+            { img: 'produto11.jpg', description: 'Descrição do produto 23', price: 'R$ 149,90', gender: 'feminino', category: 'jaqueta' },
+            { img: 'produto12.jpg', description: 'Descrição do produto 24', price: 'R$ 159,90', gender: 'masculino', category: 'camiseta' },
+        ];
+
+        let productsPerPage = 8;
+        let currentPage = 1;
+        let selectedGender = '';
+        let selectedCategory = '';
+
+        function renderProducts() {
+            const container = document.getElementById('productContainer');
+            container.innerHTML = ''; // Limpa o container
+
+            // Filtra os produtos
+            const filteredProducts = products.filter(product => {
+                return (selectedGender === '' || product.gender === selectedGender) &&
+                       (selectedCategory === '' || product.category === selectedCategory);
+            });
+
+            const startIndex = (currentPage - 1) * productsPerPage;
+            const endIndex = currentPage * productsPerPage;
+
+            const productsToShow = filteredProducts.slice(0, endIndex);
+            productsToShow.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.classList.add('col-md-3', 'mb-3');
+
+                productDiv.innerHTML = `
+                    <div class="card h-100">
+                        <img src="${product.img}" class="card-img-top" alt="${product.description}">
+                        <div class="card-body">
+                            <p class="card-text">${product.description}</p>
+                            <p class="card-text"><strong>${product.price}</strong></p>
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(productDiv);
+            });
+
+            document.getElementById('loadMoreBtn').classList.toggle('d-none', endIndex >= filteredProducts.length);
+            document.getElementById('loadLessBtn').classList.toggle('d-none', currentPage === 1);
+        }
+
+        document.getElementById('loadMoreBtn').addEventListener('click', () => {
+            currentPage++;
+            renderProducts();
+        });
+
+        document.getElementById('loadLessBtn').addEventListener('click', () => {
+            currentPage--;
+            renderProducts();
+        });
+
+        document.getElementById('genderFilter').addEventListener('change', (event) => {
+            selectedGender = event.target.value;
+            currentPage = 1;
+            renderProducts();
+        });
+
+        document.getElementById('categoryFilter').addEventListener('change', (event) => {
+            selectedCategory = event.target.value;
+            currentPage = 1;
+            renderProducts();
+        });
+
+        // Renderiza os produtos iniciais
+        renderProducts();
+    </script>
+</body>
+
+</html>
