@@ -1,0 +1,267 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+p {
+    font-size: small;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.input_min {
+    background-color: transparent;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding-top: 30px;
+    padding-bottom: 2px;
+    width: 205px;
+}
+
+.input_min:focus {
+    outline: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px;
+    border: none;
+    background-color: #000000;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.linha {
+    background-color: black;
+    width: 100%;
+    height: 1px;
+    margin: 20px 0;
+}
+
+label {
+    display: block;
+}
+
+.border_input {
+    padding: 7px;
+    border-radius: 0;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.CEP {
+    margin: 0;
+    padding-top: 30px;
+}
+
+a {
+    padding-left: 3px;
+    font-style: italic;
+    font-weight: bold;
+    color: black;
+}
+
+.cidade_estado {
+    width: 97px;
+    float: left;
+}
+
+.espaçamento {
+    margin-bottom: 15px;
+}
+
+.espaçamento-half {
+    padding-right: 10px;
+    float: left;
+    margin-bottom: 5px;
+}
+
+.clear {
+    clear: both;
+}
+
+.open-modal-btn {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.open-modal-btn:hover {
+    background-color: #0056b3;
+}
+
+.proximo-voltar {
+    float: right;
+}
+
+.forma_pagamento {
+    padding-top: 20px;
+    display: flex;
+}
+
+.bandeira_cartao {
+    width: 60px;
+    margin-bottom: -8px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.informações {
+    padding: 10px;
+    float: right;
+    width: 50%;
+}
+
+.CUPOM {
+    padding-top: 10px;
+    width: 100%;
+}
+
+.product_container {
+    display: flex;
+}
+
+.descricao {
+    padding: 10px;
+}
+
+.produto {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.produto img {
+    margin-right: 15px;
+}
+
+.product_container {
+    display: flex;
+    align-items: center;
+}
+
+p {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+
+    .input_min {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .espaçamento-half {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .cidade_estado {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .bandeira_cartao {
+        margin-bottom: -8px;
+        width: 70px;
+    }
+
+    .descricao {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .espaçamento-half,
+    .cidade_estado,
+    .descricao {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .bandeira_cartao {
+        width: 50%;
+        padding: 5px;
+        margin-bottom: -10px;
+    }
+
+    .input_min {
+        width: 100%;
+    }
+
+    .proximo-voltar,
+    .proximo_voltar {
+        width: 100%;
+        margin-top: 10px;
+    }
+}

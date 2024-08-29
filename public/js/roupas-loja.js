@@ -36,7 +36,7 @@ async function getProductIdFromUrl() {
 async function loadProduct() {
     const productId = await getProductIdFromUrl();
     const product = roupas.find(p => p.id === productId);
-    const divDetalhes = document.getElementById("div-conteudo")
+    const divDetalhes = document.getElementById("div-conteudo");
 
     if (product) {
         document.getElementById("div-imagem").innerHTML = `<img src="${product.imagem}" class="card-img-top" alt="${product.description}">`;
@@ -45,6 +45,7 @@ async function loadProduct() {
         document.getElementById("product-description").textContent = product.description;
         document.getElementById("product-price").textContent = product.price.toFixed(2).replace(".", ",");
         document.getElementById('title').textContent = product.name;
+        document.getElementById('botao-compra').innerHTML = `<a id="link-compra" href="secao-compra.html?id=${product.id}"><button type="button" class="botao-compra">COMPRE AGORA</button></a>`
     } else {
         document.getElementById('title').textContent = "Product not found";
         document.getElementById("div-imagem").innerHTML = `<img src="assets/images/tratar-erros/error.png" alt="Imagem do Produto">`;
