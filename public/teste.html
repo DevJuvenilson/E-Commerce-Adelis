@@ -134,22 +134,22 @@
     <script>
         // Lista de produtos
         const products = [
-            { img: 'produto1.jpg', description: 'Descrição do produto 1', price: 'R$ 49,90' },
-            { img: 'produto2.jpg', description: 'Descrição do produto 2', price: 'R$ 59,90' },
-            { img: 'produto3.jpg', description: 'Descrição do produto 3', price: 'R$ 69,90' },
-            { img: 'produto4.jpg', description: 'Descrição do produto 4', price: 'R$ 79,90' },
-            { img: 'produto5.jpg', description: 'Descrição do produto 5', price: 'R$ 89,90' },
-            { img: 'produto6.jpg', description: 'Descrição do produto 6', price: 'R$ 99,90' },
-            { img: 'produto7.jpg', description: 'Descrição do produto 7',  price: 'R$ 109,90' },
-            { img: 'produto8.jpg', description: 'Descrição do produto 8',  price: 'R$ 119,90' },
-            { img: 'produto9.jpg', description: 'Descrição do produto 9',  price: 'R$ 129,90' },
-            { img: 'produto10.jpg', description: 'Descrição do produto 10',  price: 'R$ 139,90' },
-            { img: 'produto11.jpg', description: 'Descrição do produto 11', price: 'R$ 149,90' },
-            { img: 'produto12.jpg', description: 'Descrição do produto 12', price: 'R$ 159,90' },
-            { img: 'produto1.jpg', description: 'Descrição do produto 13', price: 'R$ 49,90' },
-            { img: 'produto2.jpg', description: 'Descrição do produto 14', price: 'R$ 59,90' },
-            { img: 'produto3.jpg', description: 'Descrição do produto 15', price: 'R$ 69,90' },
-            { img: 'produto4.jpg', description: 'Descrição do produto 16', price: 'R$ 79,90' },
+            { img: 'assets/images/produtos/Captura_de_tela_2024-08-28_201703-removebg-preview.png', description: 'Calça Cargo com Bolso', price: 'R$ 49,90' },
+            { img: 'assets/images/produtos/Captura_de_tela_2024-08-28_201736-removebg-preview.png', description: 'Calça Cargo', price: 'R$ 59,90' },
+            { img: 'assets/images/produtos/Captura_de_tela_2024-08-28_201800-removebg-preview.png', description: 'Calça com Textura', price: 'R$ 69,90' },
+            { img: 'assets/images/produtos/Captura_de_tela_2024-08-28_201826-removebg-preview.png', description: 'Calça Slim Fit', price: 'R$ 79,90' },
+            { img: 'assets/images/produtos/calça-cargo-fit.png', description: 'Calça Cargo Fit', price: 'R$ 89,90' },
+            { img: 'assets/images/produtos/camiseta-de-moletom.png', description: 'Camiseta de Moletom', price: 'R$ 99,90' },
+            { img: 'assets/images/produtos/conjunto-minnie-mouse.png', description: 'Conjunto Minnie Mouse',  price: 'R$ 109,90' },
+            { img: 'assets/images/produtos/jaqueta-bomber.png', description: 'Jaqueta Bomber',  price: 'R$ 119,90' },
+            { img: 'assets/images/produtos/jaqueta-leve-acolchoada.png', description: 'Jaqueta Leve Acolchoada',  price: 'R$ 129,90' },
+            { img: 'assets/images/produtos/macacao-fluido.png', description: 'Macacão Fluido',  price: 'R$ 139,90' },
+            { img: 'assets/images/produtos/moletom-com-capuz.png', description: 'Moletom com Capuz', price: 'R$ 149,90' },
+            { img: 'assets/images/produtos/moletom-com-ziper.png', description: 'Moletom com Ziper', price: 'R$ 159,90' },
+            { img: 'assets/images/produtos/vestido-com-nervuras.png', description: 'Vestido com Nervuras', price: 'R$ 49,90' },
+            { img: 'assets/images/produtos/vestido-estilo-lengerie.png', description: 'Vestido Estilo Lengerie', price: 'R$ 59,90' },
+            { img: 'assets/images/produtos/jeans-zw-the-marine.png', description: 'Jeans ZW the Marine', price: 'R$ 69,90' },
+            { img: 'assets/images/produtos/jaqueta-biker-cropped.png', description: 'Jaqueta Biker Cropped', price: 'R$ 79,90' },
             { img: 'produto5.jpg', description: 'Descrição do produto 17', price: 'R$ 89,90' },
             { img: 'produto6.jpg', description: 'Descrição do produto 18', price: 'R$ 99,90' },
             { img: 'produto7.jpg', description: 'Descrição do produto 19',  price: 'R$ 109,90' },
@@ -160,7 +160,7 @@
             { img: 'produto12.jpg', description: 'Descrição do produto 24', price: 'R$ 159,90' },
         ];
 
-        let productsPerPage = 6;
+        let productsPerPage = 8;
         let currentPage = 1;
 
         function renderProducts() {
@@ -173,7 +173,7 @@
             const productsToShow = products.slice(0, endIndex);
             productsToShow.forEach(product => {
                 const productDiv = document.createElement('div');
-                productDiv.classList.add('col-md-4', 'mb-4');
+                productDiv.classList.add('col-md-3', 'mb-3');
 
                 productDiv.innerHTML = `
                     <div class="card h-100">
