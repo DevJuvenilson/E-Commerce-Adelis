@@ -14,8 +14,17 @@
     <link rel="shortcut icon" href="assets/icons/logo-adelis-ico.ico" type="image/x-icon">
 
     <style>
-        main{
-            padding-top: 50px;
+        body {
+            padding-top: 10vh;
+        }
+
+        header{
+            padding: 1em 2em;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0b1c33;
         }
     </style>
 </head>
@@ -25,8 +34,8 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <!-- Logo e Nome do Site -->
-                <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img src="assets/images/logo/logo-adelis-png.png" width="50" />
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="assets/images/logo/logo-adelis-png.png" width="50"/>
                     <span class="nome ms-2">ADELIS</span>
                 </a>
 
@@ -108,6 +117,32 @@
     </div>
 
     <main class="container my-5">
+
+        <!-- Filtros -->
+        <div class="mb-4">
+            <div class="row">
+                <div class="col-md-2">
+                    <label for="genderFilter" class="form-label ">Gênero</label>
+                    <select id="genderFilter" class="form-select ">
+                        <option value="">Todos</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="categoryFilter" class="form-label">Categoria</label>
+                    <select id="categoryFilter" class="form-select">
+                        <option value="">Todas</option>
+                        <option value="calça">Calça</option>
+                        <option value="camiseta">Camiseta</option>
+                        <option value="jaqueta">Jaqueta</option>
+                        <option value="vestido">Vestido</option>
+                        <!-- Adicione mais categorias conforme necessário -->
+                    </select>
+                </div>
+            </div>
+        </div>
+
         <div class="row" id="productContainer">
             <!-- Os produtos serão inseridos aqui pelo JavaScript -->
         </div>
@@ -131,80 +166,7 @@
 
     <script src="../bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        // Lista de produtos
-        const products = [
-            { img: 'assets/images/produtos/Captura_de_tela_2024-08-28_201703-removebg-preview.png', description: 'Calça Cargo com Bolso', price: 'R$ 49,90' },
-            { img: 'assets/images/produtos/Captura_de_tela_2024-08-28_201736-removebg-preview.png', description: 'Calça Cargo', price: 'R$ 59,90' },
-            { img: 'assets/images/produtos/Captura_de_tela_2024-08-28_201800-removebg-preview.png', description: 'Calça com Textura', price: 'R$ 69,90' },
-            { img: 'assets/images/produtos/Captura_de_tela_2024-08-28_201826-removebg-preview.png', description: 'Calça Slim Fit', price: 'R$ 79,90' },
-            { img: 'assets/images/produtos/calça-cargo-fit.png', description: 'Calça Cargo Fit', price: 'R$ 89,90' },
-            { img: 'assets/images/produtos/camiseta-de-moletom.png', description: 'Camiseta de Moletom', price: 'R$ 99,90' },
-            { img: 'assets/images/produtos/conjunto-minnie-mouse.png', description: 'Conjunto Minnie Mouse',  price: 'R$ 109,90' },
-            { img: 'assets/images/produtos/jaqueta-bomber.png', description: 'Jaqueta Bomber',  price: 'R$ 119,90' },
-            { img: 'assets/images/produtos/jaqueta-leve-acolchoada.png', description: 'Jaqueta Leve Acolchoada',  price: 'R$ 129,90' },
-            { img: 'assets/images/produtos/macacao-fluido.png', description: 'Macacão Fluido',  price: 'R$ 139,90' },
-            { img: 'assets/images/produtos/moletom-com-capuz.png', description: 'Moletom com Capuz', price: 'R$ 149,90' },
-            { img: 'assets/images/produtos/moletom-com-ziper.png', description: 'Moletom com Ziper', price: 'R$ 159,90' },
-            { img: 'assets/images/produtos/vestido-com-nervuras.png', description: 'Vestido com Nervuras', price: 'R$ 49,90' },
-            { img: 'assets/images/produtos/vestido-estilo-lengerie.png', description: 'Vestido Estilo Lengerie', price: 'R$ 59,90' },
-            { img: 'assets/images/produtos/jeans-zw-the-marine.png', description: 'Jeans ZW the Marine', price: 'R$ 69,90' },
-            { img: 'assets/images/produtos/jaqueta-biker-cropped.png', description: 'Jaqueta Biker Cropped', price: 'R$ 79,90' },
-            { img: 'produto5.jpg', description: 'Descrição do produto 17', price: 'R$ 89,90' },
-            { img: 'produto6.jpg', description: 'Descrição do produto 18', price: 'R$ 99,90' },
-            { img: 'produto7.jpg', description: 'Descrição do produto 19',  price: 'R$ 109,90' },
-            { img: 'produto8.jpg', description: 'Descrição do produto 20',  price: 'R$ 119,90' },
-            { img: 'produto9.jpg', description: 'Descrição do produto 21',  price: 'R$ 129,90' },
-            { img: 'produto10.jpg', description: 'Descrição do produto 22',  price: 'R$ 139,90' },
-            { img: 'produto11.jpg', description: 'Descrição do produto 23', price: 'R$ 149,90' },
-            { img: 'produto12.jpg', description: 'Descrição do produto 24', price: 'R$ 159,90' },
-        ];
-
-        let productsPerPage = 8;
-        let currentPage = 1;
-
-        function renderProducts() {
-            const container = document.getElementById('productContainer');
-            container.innerHTML = ''; // Limpa o container
-
-            const startIndex = (currentPage - 1) * productsPerPage;
-            const endIndex = currentPage * productsPerPage;
-
-            const productsToShow = products.slice(0, endIndex);
-            productsToShow.forEach(product => {
-                const productDiv = document.createElement('div');
-                productDiv.classList.add('col-md-3', 'mb-3');
-
-                productDiv.innerHTML = `
-                    <div class="card h-100">
-                        <img src="${product.img}" class="card-img-top" alt="${product.name}">
-                        <div class="card-body">
-                            <p class="card-text">${product.description}</p>
-                            <p class="card-text"><strong>${product.price}</strong></p>
-                        </div>
-                    </div>
-                `;
-
-                container.appendChild(productDiv);
-            });
-
-            document.getElementById('loadMoreBtn').classList.toggle('d-none', endIndex >= products.length);
-            document.getElementById('loadLessBtn').classList.toggle('d-none', currentPage === 1);
-        }
-
-        document.getElementById('loadMoreBtn').addEventListener('click', () => {
-            currentPage++;
-            renderProducts();
-        });
-
-        document.getElementById('loadLessBtn').addEventListener('click', () => {
-            currentPage--;
-            renderProducts();
-        });
-
-        // Renderiza os produtos iniciais
-        renderProducts();
-    </script>
+    <script src="js/pagina-produto.js"></script>
 </body>
 
 </html>
