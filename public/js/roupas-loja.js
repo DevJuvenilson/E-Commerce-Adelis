@@ -45,7 +45,7 @@ async function loadProduct() {
         document.getElementById("product-description").textContent = product.description;
         document.getElementById("product-price").textContent = product.price.toFixed(2).replace(".", ",");
         document.getElementById('title').textContent = product.name;
-        document.getElementById('botao-compra').innerHTML = `<a id="link-compra" href="secao-compra.html?id=${product.id}"><button type="button" class="botao-compra">COMPRE AGORA</button></a>`
+        document.getElementById('botao-compra').innerHTML = `<a id="link-compra"><button type="button" class="botao-compra open-modal-btn" onclick="openModal()">COMPRE AGORA</button></a>`
     } else {
         document.getElementById('title').textContent = "Product not found";
         document.getElementById("div-imagem").innerHTML = `<img src="assets/images/tratar-erros/error.png" alt="Imagem do Produto">`;
