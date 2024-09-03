@@ -135,7 +135,6 @@ a {
 }
 
 .open-modal-btn {
-    padding: 10px 20px;
     background-color: #000000;
     color: #fff;
     border: none;
@@ -194,12 +193,16 @@ a {
     margin-right: 15px;
 }
 
+.img-produto {
+    width: 100px;
+}
+
 .product_container {
     display: flex;
     align-items: center;
 }
 
-p {
+#product-name, #product-price {
     font-weight: bold;
 }
 

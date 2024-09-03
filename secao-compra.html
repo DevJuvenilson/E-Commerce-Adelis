@@ -41,10 +41,11 @@
 
                     <div class="input_step1">
                         <div class="espaçamento-half">
-                            <input type="text" placeholder="Nome" class="input_min required" required>
+                            <input type="text" placeholder="Nome" class="input_min required" id="nome-pessoa" required>
                         </div>
                         <div class="espaçamento-half">
-                            <input type="text" placeholder="Telefone" maxlength="14" class="input_min required" required>
+                            <input type="text" placeholder="Telefone" maxlength="14" class="input_min required"
+                                required>
                         </div>
                         <div class="espaçamento-half">
                             <input type="text" placeholder="Endereço" class="input_min required" required>
@@ -106,7 +107,7 @@
                         <input type="text" placeholder="CVV" maxlength="3" class="input_min required" required>
                     </div>
                     <div class="espaçamento-half">
-                        <input type="text" placeholder="CPF"maxlength="14" class="input_min required" required>
+                        <input type="text" placeholder="CPF" maxlength="14" class="input_min required" required>
                     </div>
                     <div class="espaçamento-half">
                         <select class="input_min">
@@ -127,10 +128,9 @@
                 <!--DIV DA PAGINA DE CONFIRMAÇÃO DA COMPRA-->
                 <div class="step">
                     <h3>Endereço de Entrega</h3>
-                    <p id="name">ddddd</p>
-                    <p id="endereco_rua">ddddd</p>
-                    <p id="casa">ddddd</p>
-                    <p id="CEP">dddddd</p>
+                    <p id="name">Daniel</p>
+                    <p id="endereco-rua">Rua Vicente Lucas, Jardim Planalto, Santa Cruz do Rio Pardo - SP</p>
+                    <p id="CEP">18910142</p>
                     <div class="CUPOM">
                         <label for="CUPOM" style="font-size: small;">Aplicar Cupom de Desconto</label>
                         <input type="text" class="border_input" placeholder="CUPOM10" id="cupomInput">
@@ -145,30 +145,40 @@
                     <p style="color: green;">Compra acima de R$250,89 Frete gratis</p>
 
                     <h3>Produtos</h3>
-                    <div class="produto">
+                    <div class="produto" id="div-conteudo">
                         <div class="product_container">
-                            <div class="imagem">
-                                <img src="" alt="Imagem do Produto" width="100">
+                            <div class="imagem" id="div-imagem">
                             </div>
                             <div class="descricao">
-                                <p id="product_name">dddddd</p>
-                                <p id="quantidade_produto">Quantidade: ddd</p>
-                                <p id="product_price">Preço: ddddddd</p>
+                                <h4 id="product-name"></h4>
+                                <p id="product-description"></p>
+                                <p id="product-price"></p>
                             </div>
                         </div>
                     </div>
 
-                    <p>Subtotal: </p>
-                    <p>Entrega: </p>
-                    <p id="total">Total: </p>
+                    <p id="subtotal"></p>
+                    <p id="entrega"></p>
+                    <p id="total"></p>
                     <button type="button" onclick="prevStep()" class="proximo_voltar">Voltar</button>
                     <button type="submit" class="proximo_voltar" id="total">Confirmar</button>
-
-
             </form>
         </div>
     </div>
 
+    <!-- PLUG-IN DE LIBRAS -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
     <script src="js/secao-compra.js"></script>
 </body>
+
 </html>

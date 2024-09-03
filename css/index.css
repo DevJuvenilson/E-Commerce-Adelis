@@ -134,6 +134,14 @@ header {
 
 /* Estilos para tablets */
 @media (min-width: 768px) and (max-width: 1024px) {
+    .carousel-inner {
+        width: 100%;
+    }
+
+    .carousel-item {
+        width: 100%;
+    }
+
     .first {
         background-image: url(../assets/images/banners-promocionais/1/Banner-promocional\(1\)-medio.png);
         background-size: cover;

@@ -19,11 +19,11 @@ const roupas = [
     { id: 17, imagem: `assets/images/roupas/vestido.jpg`, name: "VESTIDO", description: "Vestido curto de decote redondo com decote em V e manga por debaixo do cotovelo com elástico. Detalhe de bordados perfurados com tecido efeito de caucho. Fecho frontal com botões e cinto no tom.", price: 289, gender: 'feminino', category: 'vestido' },
     { id: 18, imagem: 'assets/images/roupas/bolsa.jpg"', name: "BOLSA TOTE BAG", description: "Bolsa formato tote bag. Alça de ombro. Detalhe de pendente. Bolso interior maxi. Fecho de ímã. Altura x Largura x Profundidade: 29,5 x 36,5 x 12 cm.", price: 279, gender: 'feminino', category: 'bolsa' },
     { id: 19, imagem: 'assets/images/roupas/camisa.jpg', name: "CAMISA DE MANGA CURTA", description: "Camisa confeccionada com linho. Gola com lapela, decote em V e manga curta com acabamento em dobra com presilha e botão. Bolsos de patch com aba na frente. Fecho na frente com botões.", price: 199, gender: 'feminino', category: 'camiseta' },
-    { id: 20, imagem: 'produto8.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 20', price:  119.90, gender: 'masculino', category: 'jaqueta' },
-    { id: 21, imagem: 'produto9.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 21', price:  129.90, gender: 'feminino', category: 'calça' },
-    { id: 22, imagem: 'produto10.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 22', price:  139.90, gender: 'masculino', category: 'camiseta' },
-    { id: 23, imagem: 'produto11.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 23', price:  149.90, gender: 'feminino', category: 'jaqueta' },
-    { id: 24, imagem: 'produto12.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 24', price:  159.90, gender: 'masculino', category: 'camiseta' },
+    { imagem: 'produto8.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 20', price:  119.90, gender: 'masculino', category: 'jaqueta' },
+    { imagem: 'produto9.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 21', price:  129.90, gender: 'feminino', category: 'calça' },
+    { imagem: 'produto10.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 22', price:  139.90, gender: 'masculino', category: 'camiseta' },
+    { imagem: 'produto11.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 23', price:  149.90, gender: 'feminino', category: 'jaqueta' },
+    { imagem: 'produto12.jpg', name: "CALÇA CARGO", description: 'Descrição do produto 24', price:  159.90, gender: 'masculino', category: 'camiseta' },
 ];
 
 // Função para obter o ID do produto a partir da URL
@@ -45,7 +45,7 @@ async function loadProduct() {
         document.getElementById("product-description").textContent = product.description;
         document.getElementById("product-price").textContent = product.price.toFixed(2).replace(".", ",");
         document.getElementById('title').textContent = product.name;
-        document.getElementById('botao-compra').innerHTML = `<a id="link-compra" href="secao-compra.html?id=${product.id}"><button type="button" class="botao-compra">COMPRE AGORA</button></a>`
+        document.getElementById('botao-compra').innerHTML = `<a id="link-compra" href="secao-compra.html?id=${product.id}"><button type="button" class="botao-compra open-modal-btn" onclick="openModal()">COMPRE AGORA</button></a>`
     } else {
         document.getElementById('title').textContent = "Product not found";
         document.getElementById("div-imagem").innerHTML = `<img src="assets/images/tratar-erros/error.png" alt="Imagem do Produto">`;
