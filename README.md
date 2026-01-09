@@ -18,6 +18,7 @@ You can access the website in this link: https://devjuvenilson.github.io/E-Comme
 - JavaScript
 - HTML
 - CSS
+- Bootstrap
 
 ---
 
